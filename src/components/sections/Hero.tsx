@@ -1,7 +1,7 @@
 import { ArrowRight, Download, MapPin } from "lucide-react";
 
 import { ButtonLink } from "@/components/ui/Button";
-import { SocialIcon, socialNames } from "@/components/ui/SocialIcon";
+import { SocialIcon, socialName } from "@/components/ui/SocialIcon";
 import { socials } from "@/content/shared";
 import type { Content } from "@/content/types";
 
@@ -19,7 +19,8 @@ export function Hero({
   resumeHref,
 }: {
   content: Content;
-  resumeHref: string;
+  /** Null when no CV PDF exists yet — the button is omitted rather than broken. */
+  resumeHref: string | null;
 }) {
   const { hero } = content;
 
@@ -74,10 +75,12 @@ export function Hero({
                 {hero.ctaProjects}
                 <ArrowRight size={17} aria-hidden />
               </ButtonLink>
-              <ButtonLink href={resumeHref} download variant="secondary" size="lg">
-                <Download size={17} aria-hidden />
-                {hero.ctaResume}
-              </ButtonLink>
+              {resumeHref ? (
+                <ButtonLink href={resumeHref} download variant="secondary" size="lg">
+                  <Download size={17} aria-hidden />
+                  {hero.ctaResume}
+                </ButtonLink>
+              ) : null}
             </div>
           </div>
 
@@ -87,7 +90,7 @@ export function Hero({
                 <li key={social.id}>
                   <a
                     href={social.href}
-                    aria-label={socialNames[social.id]}
+                    aria-label={socialName(social)}
                     {...(social.href.startsWith("http")
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}

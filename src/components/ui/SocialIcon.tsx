@@ -20,7 +20,12 @@ const icons = {
   website: Globe,
 } as const;
 
-/** Human-readable names, used for accessible labels. */
+/** Display name for a link: its own override, else the default for its id. */
+export function socialName(link: SocialLink) {
+  return link.name ?? socialNames[link.id];
+}
+
+/** Default human-readable names per id, used for accessible labels. */
 export const socialNames: Record<SocialLink["id"], string> = {
   github: "GitHub",
   linkedin: "LinkedIn",

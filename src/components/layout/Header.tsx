@@ -18,7 +18,8 @@ export function Header({
 }: {
   locale: Locale;
   content: Content;
-  resumeHref: string;
+  /** Null when no CV PDF exists yet — the button is omitted rather than broken. */
+  resumeHref: string | null;
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -107,14 +108,16 @@ export function Header({
             label={content.nav.languageLabel}
             className="hidden sm:flex"
           />
-          <ButtonLink
-            href={resumeHref}
-            download
-            size="sm"
-            className="hidden sm:inline-flex"
-          >
-            {content.hero.ctaResume}
-          </ButtonLink>
+          {resumeHref ? (
+            <ButtonLink
+              href={resumeHref}
+              download
+              size="sm"
+              className="hidden sm:inline-flex"
+            >
+              {content.hero.ctaResume}
+            </ButtonLink>
+          ) : null}
 
           <button
             type="button"
@@ -159,9 +162,11 @@ export function Header({
 
             <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-4">
               <LocaleSwitcher current={locale} label={content.nav.languageLabel} />
-              <ButtonLink href={resumeHref} download size="sm">
-                {content.hero.ctaResume}
-              </ButtonLink>
+              {resumeHref ? (
+                <ButtonLink href={resumeHref} download size="sm">
+                  {content.hero.ctaResume}
+                </ButtonLink>
+              ) : null}
             </div>
           </nav>
         </div>

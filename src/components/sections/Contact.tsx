@@ -4,7 +4,7 @@ import { ButtonLink } from "@/components/ui/Button";
 import { CopyEmail } from "@/components/ui/CopyEmail";
 import { Reveal, RevealGroup, RevealItem } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { SocialIcon, socialNames } from "@/components/ui/SocialIcon";
+import { SocialIcon, socialName, socialNames } from "@/components/ui/SocialIcon";
 import { site, socials } from "@/content/shared";
 import type { Content } from "@/content/types";
 
@@ -19,7 +19,8 @@ export function Contact({
   resumeHref,
 }: {
   content: Content;
-  resumeHref: string;
+  /** Null when no CV PDF exists yet — the button is omitted rather than broken. */
+  resumeHref: string | null;
 }) {
   const links = [...socials];
 
@@ -53,7 +54,7 @@ export function Contact({
               </span>
               <span className="min-w-0 flex-1">
                 <span className="block text-step-0 font-medium">
-                  {socialNames[link.id]}
+                  {socialName(link)}
                 </span>
                 <span className="block truncate font-mono text-step--1 text-text-muted">
                   {link.label}
@@ -70,10 +71,12 @@ export function Contact({
       </RevealGroup>
 
       <Reveal className="mt-8 flex flex-wrap items-center gap-3">
-        <ButtonLink href={resumeHref} download size="lg">
-          <Download size={17} aria-hidden />
-          {content.contact.ctaResume}
-        </ButtonLink>
+        {resumeHref ? (
+          <ButtonLink href={resumeHref} download size="lg">
+            <Download size={17} aria-hidden />
+            {content.contact.ctaResume}
+          </ButtonLink>
+        ) : null}
         <CopyEmail
           email={site.email}
           label={content.contact.copyEmail}

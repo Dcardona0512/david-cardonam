@@ -1,6 +1,6 @@
 import { ArrowUp } from "lucide-react";
 
-import { SocialIcon, socialNames } from "@/components/ui/SocialIcon";
+import { SocialIcon, socialName } from "@/components/ui/SocialIcon";
 import { socials } from "@/content/shared";
 import type { Content } from "@/content/types";
 
@@ -25,7 +25,7 @@ export function Footer({ content, name }: { content: Content; name: string }) {
               <li key={social.id}>
                 <a
                   href={social.href}
-                  aria-label={socialNames[social.id]}
+                  aria-label={socialName(social)}
                   {...(social.href.startsWith("http")
                     ? { target: "_blank", rel: "noopener noreferrer" }
                     : {})}

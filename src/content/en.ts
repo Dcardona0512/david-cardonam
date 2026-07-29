@@ -10,15 +10,17 @@ import type { Content } from "./types";
  */
 const en: Content = {
   meta: {
-    title: `${site.name} — Junior Web Developer`,
+    title: `${site.name} — Vibe Coder`,
     description:
-      "Junior web developer focused on React, Next.js and TypeScript. Portfolio with live projects, source code and a downloadable résumé.",
+      // TODO(David): add "and a downloadable résumé" once the PDF is in place.
+      "Vibe Coder based in Cali, Colombia. I build web interfaces with HTML, CSS and AI tooling. Portfolio with projects and open source code.",
     keywords: [
-      "junior web developer",
-      "React",
-      "Next.js",
-      "TypeScript",
-      "frontend developer",
+      "vibe coder",
+      "web development",
+      "HTML",
+      "CSS",
+      "AI-assisted development",
+      "Cali Colombia",
       "portfolio",
     ],
   },
@@ -37,10 +39,11 @@ const en: Content = {
   hero: {
     availability: "Open to new opportunities",
     name: site.name,
-    headline: "Junior Web Developer",
+    headline: "Vibe Coder",
+    // ⚠️ TODO(David): keep this in sync with the Spanish pitch once you rewrite it.
     pitch:
-      "I spent five years in customer support and now I build web interfaces with React, Next.js and TypeScript. I bring something a bootcamp doesn't teach: listening to the user before writing the first line of code.",
-    location: "Madrid, Spain · Remote or hybrid",
+      "I build web interfaces by pairing HTML and CSS fundamentals with AI tooling to move fast, from idea to deploy. HTML-certified by Platzi and learning in public: everything I build ends up shipped, with the source open.",
+    location: "Cali, Colombia · Remote or hybrid",
     ctaProjects: "View projects",
     ctaResume: "Download résumé",
     scrollHint: "Scroll to see my work",
@@ -49,7 +52,7 @@ const en: Content = {
     eyebrow: "Projects",
     heading: "Code you can review today",
     intro:
-      "Every project solves a real problem, is deployed, and has open source code. I'd rather show three things you can open and try than list ten that don't exist.",
+      "I'd rather show one thing you can open and try than list ten that don't exist. Here's what I've built, with the source in the open.",
     demoLabel: "Live demo",
     repoLabel: "Source code",
     demoUnavailable: "Demo coming soon",
@@ -58,25 +61,13 @@ const en: Content = {
     roleLabel: "My role",
     items: {
       "proyecto-1": {
-        name: "TODO: Project 1 name",
+        name: "TODO: Your project name",
         summary:
-          "TODO: the problem it solves, in one sentence. Example: local shops had no way to manage bookings without paying a monthly subscription.",
+          "TODO: the problem it solves, in one sentence — the problem, not a feature list.",
         outcome:
-          "TODO: one measurable result. Example: used by 3 real businesses, handling 400+ bookings since launch.",
+          "TODO: one measurable result. If nobody uses it yet, measure something real anyway: a Lighthouse score, a load time, works-without-JavaScript. An honest number beats an adjective.",
         role:
-          "TODO: what you built. Example: full design, frontend and API; database modelled from scratch.",
-      },
-      "proyecto-2": {
-        name: "TODO: Project 2 name",
-        summary: "TODO: the problem it solves, in one sentence.",
-        outcome:
-          "TODO: one measurable result. Example: cut load time from 4.1s to 0.8s by optimising images and queries.",
-      },
-      "proyecto-3": {
-        name: "TODO: Project 3 name",
-        summary: "TODO: the problem it solves, in one sentence.",
-        outcome:
-          "TODO: one measurable result. Example: 100% test coverage on business logic and a 98 mobile Lighthouse score.",
+          "TODO: what you did and what you used to do it. Being explicit about AI assistance builds more trust than hiding it — what matters is that you understand the code you ship.",
       },
     },
   },
@@ -92,19 +83,21 @@ const en: Content = {
       frontend: "Frontend",
       backend: "Backend & data",
       tools: "Tooling",
+      ai: "AI & workflow",
     },
   },
   about: {
     eyebrow: "About",
-    heading: "From customer support to building the product",
+    // TODO(David): swap for your real transition, e.g. "From [your trade] to code".
+    heading: "Learning to build, in public",
     paragraphs: [
-      "TODO: where you came from. Example: for five years I resolved customer issues at a logistics company. My job was turning a confused problem into something actionable, fast.",
-      "TODO: what brought you to development. Example: I automated the reports we built by hand every week using spreadsheets and scripts. Saving the team two hours turned into wanting to understand how software gets built end to end.",
-      "TODO: the transferable skill you bring. Example: I ask the awkward questions before I start coding, I write so someone else can follow it, and I've worked to real deadlines.",
+      "TODO: where you came from — what your job or trade was before code. This is the most important paragraph on the page: it turns \"no experience\" into \"I bring something else\".",
+      "TODO: what brought you to development. The first thing you built or automated, and why it hooked you.",
+      "TODO: the transferable skill you bring. Client-facing work, time management, attention to detail, working under pressure — name it and say where you learned it.",
     ],
     photoAlt: `Portrait of ${site.name}`,
     lookingFor:
-      "TODO: what you're looking for. Example: my first frontend role on a team that reviews code and does mentoring.",
+      "TODO: what you're looking for. Example: my first junior frontend role, on a team that reviews code and does mentoring.",
   },
   timeline: {
     eyebrow: "Background",
@@ -119,31 +112,14 @@ const en: Content = {
     },
     verifyLabel: "Verify",
     items: {
-      bootcamp: {
-        title: "TODO: Full-Stack Web Development Bootcamp",
-        organization: "TODO: School name",
+      // Verified from the diploma PDF.
+      "cert-html-platzi": {
+        title: "HTML Course",
+        organization: "Platzi",
         highlights: [
-          "TODO: a concrete number. Example: 800 hours of intensive training in JavaScript, React, Node.js and PostgreSQL.",
-          "TODO: an achievement. Example: final project selected among the top 3 of a 45-student cohort.",
+          "15 hours of theory and practice covering semantic structure, forms and basic accessibility.",
+          "Credential 68a24eb2-3601-4c5f-90c5-b645f4dcdb86, verifiable on the public Platzi profile.",
         ],
-      },
-      "cert-1": {
-        title: "TODO: Certification name",
-        organization: "TODO: Issuing body",
-        highlights: ["TODO: what it certifies, in one line."],
-      },
-      "trabajo-anterior": {
-        title: "TODO: Your previous role",
-        organization: "TODO: Company name",
-        highlights: [
-          "TODO: achievement with a number. Example: managed a 200-client portfolio with 96% satisfaction.",
-          "TODO: transferable achievement. Example: automated the team's weekly report, saving 8 hours of manual work a month.",
-        ],
-      },
-      "formacion-previa": {
-        title: "TODO: Your earlier education",
-        organization: "TODO: University or institution",
-        highlights: ["TODO: only if it adds something. Otherwise delete this entry from shared.ts."],
       },
     },
   },

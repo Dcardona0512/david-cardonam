@@ -11,15 +11,17 @@ import type { Content } from "./types";
  */
 const es: Content = {
   meta: {
-    title: `${site.name} — Desarrollador Web Junior`,
+    title: `${site.name} — Vibe Coder`,
     description:
-      "Desarrollador web junior especializado en React, Next.js y TypeScript. Portafolio con proyectos, código y CV descargable.",
+      // TODO(David): añade «y CV descargable» cuando subas el PDF.
+      "Vibe Coder en Cali, Colombia. Construyo interfaces web con HTML, CSS y herramientas de IA. Portafolio con proyectos y código abierto.",
     keywords: [
-      "desarrollador web junior",
-      "React",
-      "Next.js",
-      "TypeScript",
-      "frontend",
+      "vibe coder",
+      "desarrollo web",
+      "HTML",
+      "CSS",
+      "desarrollo asistido por IA",
+      "Cali",
       "portafolio",
     ],
   },
@@ -38,12 +40,18 @@ const es: Content = {
   hero: {
     availability: "Disponible para nuevas oportunidades",
     name: site.name,
-    headline: "Desarrollador Web Junior",
-    // The single most important sentence on the site: name the transition and
-    // turn it into an advantage.
+    headline: "Vibe Coder",
+    /**
+     * The single most important sentence on the site.
+     *
+     * ⚠️ TODO(David): rewrite this in your own words. I don't know what you did
+     * before, so the transition — the strongest card a career changer has — is
+     * missing. Pattern that works: "Vengo de [X]. Ahora construyo [Y] con [Z].
+     * Traigo [habilidad transferible]."
+     */
     pitch:
-      "Vengo de cinco años en atención al cliente y ahora construyo interfaces web con React, Next.js y TypeScript. Traigo algo que no se aprende en un bootcamp: saber escuchar al usuario antes de escribir la primera línea de código.",
-    location: "Madrid, España · Remoto o híbrido",
+      "Construyo interfaces web combinando fundamentos de HTML y CSS con herramientas de IA para iterar rápido, desde la idea hasta el deploy. Certificado en HTML por Platzi y aprendiendo en público: cada cosa que construyo termina publicada y con el código a la vista.",
+    location: "Cali, Colombia · Remoto o híbrido",
     ctaProjects: "Ver proyectos",
     ctaResume: "Descargar CV",
     scrollHint: "Desliza para ver mi trabajo",
@@ -52,7 +60,7 @@ const es: Content = {
     eyebrow: "Proyectos",
     heading: "Código que puedes revisar hoy",
     intro:
-      "Cada proyecto resuelve un problema real, está desplegado y tiene el código abierto. Prefiero tres proyectos que puedas abrir y probar a una lista de diez que no existen.",
+      "Prefiero un proyecto que puedas abrir y probar a una lista de diez que no existen. Aquí está lo que he construido, con el código a la vista.",
     demoLabel: "Ver demo",
     repoLabel: "Ver código",
     demoUnavailable: "Demo en preparación",
@@ -61,25 +69,13 @@ const es: Content = {
     roleLabel: "Mi rol",
     items: {
       "proyecto-1": {
-        name: "TODO: Nombre del proyecto 1",
+        name: "TODO: Nombre de tu proyecto",
         summary:
-          "TODO: el problema que resuelve en una frase. Ejemplo: los pequeños comercios del barrio no tenían forma de gestionar reservas sin pagar una suscripción mensual.",
+          "TODO: el problema que resuelve, en una frase. No una lista de funciones — el problema. Ejemplo: «los profesores del colegio apuntaban las notas en papel y perdían horas pasándolas a limpio».",
         outcome:
-          "TODO: un resultado medible. Ejemplo: lo usan 3 negocios reales y han gestionado más de 400 reservas desde el lanzamiento.",
+          "TODO: un resultado medible. Si nadie lo usa todavía, mide algo real de todos modos: «Lighthouse 95 en móvil», «funciona sin JavaScript», «se carga en menos de 1 s». Un número honesto vale más que un adjetivo.",
         role:
-          "TODO: qué construiste tú. Ejemplo: diseño, frontend y API completos; base de datos modelada desde cero.",
-      },
-      "proyecto-2": {
-        name: "TODO: Nombre del proyecto 2",
-        summary: "TODO: el problema que resuelve, en una frase.",
-        outcome:
-          "TODO: un resultado medible. Ejemplo: reduje el tiempo de carga de 4,1 s a 0,8 s optimizando imágenes y consultas.",
-      },
-      "proyecto-3": {
-        name: "TODO: Nombre del proyecto 3",
-        summary: "TODO: el problema que resuelve, en una frase.",
-        outcome:
-          "TODO: un resultado medible. Ejemplo: 100 % de cobertura de tests en la lógica de negocio y Lighthouse 98 en móvil.",
+          "TODO: qué hiciste tú exactamente y con qué te ayudaste. Ser explícito sobre el uso de IA genera más confianza que ocultarlo: lo que interesa es que entiendas el código que entregas.",
       },
     },
   },
@@ -95,25 +91,28 @@ const es: Content = {
       frontend: "Frontend",
       backend: "Backend y datos",
       tools: "Herramientas",
+      ai: "IA y flujo de trabajo",
     },
   },
   about: {
     eyebrow: "Sobre mí",
-    heading: "De atención al cliente a escribir el producto",
+    // TODO(David): cámbialo por tu transición real, ej. "De [tu oficio] al código".
+    heading: "Aprendiendo a construir, en público",
     paragraphs: [
-      "TODO: de dónde vienes. Ejemplo: durante cinco años resolví incidencias de clientes en una empresa de logística. Mi trabajo era traducir un problema confuso a algo accionable, y hacerlo rápido.",
-      "TODO: qué te trajo al desarrollo. Ejemplo: automaticé con hojas de cálculo y scripts los informes que hacíamos a mano cada semana. Pasé de ahorrar dos horas al equipo a querer entender cómo se construye el software entero.",
-      "TODO: qué habilidad transferible traes. Ejemplo: sé hacer las preguntas incómodas antes de empezar a programar, escribir para que otra persona lo entienda y trabajar con plazos reales.",
+      "TODO: de dónde vienes. Cuál era tu trabajo u oficio antes del código. Es el párrafo más importante de esta sección: convierte un «no tengo experiencia» en «traigo otra cosa».",
+      "TODO: qué te trajo al desarrollo. Qué fue lo primero que construiste o automatizaste, y por qué te enganchó.",
+      "TODO: qué habilidad transferible traes. Trato con clientes, gestión de tiempos, atención al detalle, trabajo bajo presión: nómbrala y di dónde la aprendiste.",
     ],
     photoAlt: `Retrato de ${site.name}`,
     lookingFor:
-      "TODO: qué buscas. Ejemplo: busco mi primer puesto como desarrollador frontend en un equipo donde se revise código y se haga mentoría.",
+      "TODO: qué buscas. Ejemplo: busco mi primera oportunidad como desarrollador frontend junior, en un equipo donde se revise código y se haga mentoría.",
   },
   timeline: {
     eyebrow: "Trayectoria",
     heading: "Formación y experiencia",
     intro:
       "Incluyo la experiencia no técnica a propósito: es donde aprendí a trabajar con personas, plazos y prioridades que cambian.",
+    // (Ver el TODO en shared.ts: falta añadir experiencia y formación previa.)
     present: "Actualidad",
     kinds: {
       work: "Experiencia",
@@ -122,31 +121,14 @@ const es: Content = {
     },
     verifyLabel: "Verificar",
     items: {
-      bootcamp: {
-        title: "TODO: Bootcamp de Desarrollo Web Full-Stack",
-        organization: "TODO: Nombre de la escuela",
+      // Verificado desde el diploma PDF.
+      "cert-html-platzi": {
+        title: "Curso de HTML",
+        organization: "Platzi",
         highlights: [
-          "TODO: dato concreto. Ejemplo: 800 horas de formación intensiva en JavaScript, React, Node.js y PostgreSQL.",
-          "TODO: logro. Ejemplo: proyecto final seleccionado entre los 3 mejores de una promoción de 45 alumnos.",
+          "15 horas de teoría y práctica sobre estructura semántica, formularios y accesibilidad básica.",
+          "Credencial 68a24eb2-3601-4c5f-90c5-b645f4dcdb86, verificable en el perfil público de Platzi.",
         ],
-      },
-      "cert-1": {
-        title: "TODO: Nombre de la certificación",
-        organization: "TODO: Entidad emisora",
-        highlights: ["TODO: qué acredita, en una línea."],
-      },
-      "trabajo-anterior": {
-        title: "TODO: Tu puesto anterior",
-        organization: "TODO: Nombre de la empresa",
-        highlights: [
-          "TODO: logro con número. Ejemplo: gestioné una cartera de 200 clientes con un 96 % de satisfacción.",
-          "TODO: logro transferible. Ejemplo: automaticé el informe semanal del equipo y ahorré 8 horas de trabajo manual al mes.",
-        ],
-      },
-      "formacion-previa": {
-        title: "TODO: Tu formación previa",
-        organization: "TODO: Universidad o centro",
-        highlights: ["TODO: solo si aporta. Si no, borra esta entrada de shared.ts."],
       },
     },
   },

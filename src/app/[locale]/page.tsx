@@ -16,7 +16,8 @@ export default async function Page({ params }: PageProps<"/[locale]">) {
   if (!isLocale(locale)) notFound();
 
   const content = getContent(locale);
-  const resumeHref = site.resume[locale];
+  // Null until the CV PDFs exist; every CV button hides itself in that case.
+  const resumeHref = site.resume?.[locale] ?? null;
 
   /**
    * Structured data so search engines model the page as a person rather than a

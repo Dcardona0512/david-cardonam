@@ -64,6 +64,12 @@ export interface SocialLink {
   href: string;
   /** Shown next to the icon, e.g. the handle or the address itself. */
   label: string;
+  /**
+   * Overrides the default display name for this `id`. Needed when `website` is
+   * used for a specific service — "Platzi" is far more useful to a recruiter
+   * than the generic "Web".
+   */
+  name?: string;
 }
 
 /* -------------------------------------------------------------------------- */
