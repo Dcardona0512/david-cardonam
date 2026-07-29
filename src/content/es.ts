@@ -11,17 +11,18 @@ import type { Content } from "./types";
  */
 const es: Content = {
   meta: {
-    title: `${site.name} — Vibe Coder`,
+    title: `${site.name} — Desarrollador Web Junior`,
     description:
       // TODO(David): añade «y CV descargable» cuando subas el PDF.
-      "Vibe Coder en Cali, Colombia. Construyo interfaces web con HTML, CSS y herramientas de IA. Portafolio con proyectos y código abierto.",
+      "Desarrollador web junior en Cali, Colombia. Ex piloto comercial. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto en producción y código abierto.",
     keywords: [
-      "vibe coder",
-      "desarrollo web",
-      "HTML",
-      "CSS",
-      "desarrollo asistido por IA",
-      "Cali",
+      "desarrollador web junior",
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "React",
+      "frontend",
+      "Cali Colombia",
       "portafolio",
     ],
   },
@@ -40,17 +41,14 @@ const es: Content = {
   hero: {
     availability: "Disponible para nuevas oportunidades",
     name: site.name,
-    headline: "Vibe Coder",
+    headline: "Desarrollador Web Junior",
     /**
-     * The single most important sentence on the site.
-     *
-     * ⚠️ TODO(David): rewrite this in your own words. I don't know what you did
-     * before, so the transition — the strongest card a career changer has — is
-     * missing. Pattern that works: "Vengo de [X]. Ahora construyo [Y] con [Z].
-     * Traigo [habilidad transferible]."
+     * The single most important sentence on the site: it names the transition
+     * and turns it into an advantage instead of a gap. Rewrite it in your own
+     * voice if you want, but keep the shape — pilot first, then what you build.
      */
     pitch:
-      "Construyo interfaces web combinando fundamentos de HTML y CSS con herramientas de IA para iterar rápido, desde la idea hasta el deploy. Certificado en HTML por Platzi y aprendiendo en público: cada cosa que construyo termina publicada y con el código a la vista.",
+      "Fui piloto comercial de avión en Colombia. Hoy construyo aplicaciones web con Next.js, TypeScript y Supabase, y traigo de la cabina algo que aquí importa igual: seguir procedimientos, revisar cada detalle antes de despegar y decidir con la información que tengo.",
     location: "Cali, Colombia · Remoto o híbrido",
     ctaProjects: "Ver proyectos",
     ctaResume: "Descargar CV",
@@ -60,7 +58,7 @@ const es: Content = {
     eyebrow: "Proyectos",
     heading: "Código que puedes revisar hoy",
     intro:
-      "Prefiero un proyecto que puedas abrir y probar a una lista de diez que no existen. Aquí está lo que he construido, con el código a la vista.",
+      "Un proyecto real, en producción y con el código abierto. Prefiero eso a una lista de diez que no puedes abrir.",
     demoLabel: "Ver demo",
     repoLabel: "Ver código",
     demoUnavailable: "Demo en preparación",
@@ -68,14 +66,16 @@ const es: Content = {
     outcomeLabel: "Resultado",
     roleLabel: "Mi rol",
     items: {
-      "proyecto-1": {
-        name: "TODO: Nombre de tu proyecto",
+      "la-53": {
+        name: "Autoservicios La 53",
         summary:
-          "TODO: el problema que resuelve, en una frase. No una lista de funciones — el problema. Ejemplo: «los profesores del colegio apuntaban las notas en papel y perdían horas pasándolas a limpio».",
+          "Un supermercado de barrio tomaba los pedidos por WhatsApp y llevaba el inventario a mano. Construí una tienda en línea con pago contra entrega y un panel de administración que unifica catálogo, stock y pedidos en un solo sitio.",
         outcome:
-          "TODO: un resultado medible. Si nadie lo usa todavía, mide algo real de todos modos: «Lighthouse 95 en móvil», «funciona sin JavaScript», «se carga en menos de 1 s». Un número honesto vale más que un adjetivo.",
+          // TODO(David): si ya lo está usando el negocio, cámbialo por el dato
+          // real: nº de productos cargados, pedidos gestionados, meses en uso.
+          "Desplegado y funcionando en producción: tienda pública, panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara e informes de ventas.",
         role:
-          "TODO: qué hiciste tú exactamente y con qué te ayudaste. Ser explícito sobre el uso de IA genera más confianza que ocultarlo: lo que interesa es que entiendas el código que entregas.",
+          "Lo construí completo: modelo de datos en Postgres con Row Level Security, autenticación, subida de imágenes, la tienda y el panel. Trabajo con asistentes de IA para avanzar rápido, y reviso y entiendo cada parte antes de darla por terminada.",
       },
     },
   },
@@ -96,23 +96,21 @@ const es: Content = {
   },
   about: {
     eyebrow: "Sobre mí",
-    // TODO(David): cámbialo por tu transición real, ej. "De [tu oficio] al código".
-    heading: "Aprendiendo a construir, en público",
+    heading: "De la cabina de un avión al desarrollo web",
     paragraphs: [
-      "TODO: de dónde vienes. Cuál era tu trabajo u oficio antes del código. Es el párrafo más importante de esta sección: convierte un «no tengo experiencia» en «traigo otra cosa».",
-      "TODO: qué te trajo al desarrollo. Qué fue lo primero que construiste o automatizaste, y por qué te enganchó.",
-      "TODO: qué habilidad transferible traes. Trato con clientes, gestión de tiempos, atención al detalle, trabajo bajo presión: nómbrala y di dónde la aprendiste.",
+      "Fui piloto comercial de avión en Colombia. Volar no es improvisar: es checklist antes de cada despegue, procedimientos que se siguen aunque tengas prisa, y decisiones que hay que tomar con la información disponible y sin margen para el «ya veremos».",
+      "Decidí estudiar algo distinto y encontré en el desarrollo web lo que me gustaba de volar, pero sin techo: puedo construir una cosa entera desde cero, romperla, entender por qué se rompió y volver a levantarla el mismo día. Me engancharon las dos partes, la que se ve y la que sostiene todo por debajo.",
+      "De la aviación me traigo el hábito de verificar antes de dar algo por bueno, la tolerancia a los procedimientos aburridos que evitan problemas grandes, y la costumbre de trabajar con responsabilidad real sobre lo que entrego.",
     ],
     photoAlt: `Retrato de ${site.name}`,
     lookingFor:
-      "TODO: qué buscas. Ejemplo: busco mi primera oportunidad como desarrollador frontend junior, en un equipo donde se revise código y se haga mentoría.",
+      "Busco mi primera oportunidad como desarrollador web junior, en un equipo donde se revise código y se haga mentoría. Estoy en Cali y me interesa tanto remoto como híbrido.",
   },
   timeline: {
     eyebrow: "Trayectoria",
     heading: "Formación y experiencia",
     intro:
-      "Incluyo la experiencia no técnica a propósito: es donde aprendí a trabajar con personas, plazos y prioridades que cambian.",
-    // (Ver el TODO en shared.ts: falta añadir experiencia y formación previa.)
+      "Incluyo mi etapa como piloto a propósito: es donde aprendí a trabajar con procedimientos, presión real y responsabilidad sobre el resultado.",
     present: "Actualidad",
     kinds: {
       work: "Experiencia",
@@ -129,6 +127,24 @@ const es: Content = {
           "15 horas de teoría y práctica sobre estructura semántica, formularios y accesibilidad básica.",
           "Credencial 68a24eb2-3601-4c5f-90c5-b645f4dcdb86, verificable en el perfil público de Platzi.",
         ],
+      },
+      /**
+       * Texto listo para cuando descomentes la entrada en shared.ts con tus
+       * fechas reales. Los highlights están en TODO porque solo tú conoces los
+       * números — y en esta sección los números son lo que convence.
+       */
+      "piloto-comercial": {
+        title: "Piloto Comercial de Avión",
+        organization: "TODO: aerolínea o escuela de vuelo",
+        highlights: [
+          "TODO: un dato concreto. Las horas de vuelo acumuladas son el equivalente aeronáutico de una métrica, y a un reclutador le dicen «esta persona sostuvo algo exigente durante años».",
+          "TODO: una responsabilidad que se traduzca. Ej.: operar bajo procedimientos estrictos, coordinar con tripulación y torre, o responsabilidad directa sobre la seguridad de los pasajeros.",
+        ],
+      },
+      "formacion-aeronautica": {
+        title: "TODO: Licencia o formación aeronáutica",
+        organization: "TODO: institución",
+        highlights: ["TODO: solo si aporta; si no, borra esta entrada."],
       },
     },
   },

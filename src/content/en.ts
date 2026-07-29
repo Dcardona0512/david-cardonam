@@ -10,16 +10,17 @@ import type { Content } from "./types";
  */
 const en: Content = {
   meta: {
-    title: `${site.name} — Vibe Coder`,
+    title: `${site.name} — Junior Web Developer`,
     description:
       // TODO(David): add "and a downloadable résumé" once the PDF is in place.
-      "Vibe Coder based in Cali, Colombia. I build web interfaces with HTML, CSS and AI tooling. Portfolio with projects and open source code.",
+      "Junior web developer in Cali, Colombia. Former commercial airline pilot. I build applications with Next.js, TypeScript and Supabase. Portfolio with a project in production and open source code.",
     keywords: [
-      "vibe coder",
-      "web development",
-      "HTML",
-      "CSS",
-      "AI-assisted development",
+      "junior web developer",
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "React",
+      "frontend developer",
       "Cali Colombia",
       "portfolio",
     ],
@@ -39,10 +40,9 @@ const en: Content = {
   hero: {
     availability: "Open to new opportunities",
     name: site.name,
-    headline: "Vibe Coder",
-    // ⚠️ TODO(David): keep this in sync with the Spanish pitch once you rewrite it.
+    headline: "Junior Web Developer",
     pitch:
-      "I build web interfaces by pairing HTML and CSS fundamentals with AI tooling to move fast, from idea to deploy. HTML-certified by Platzi and learning in public: everything I build ends up shipped, with the source open.",
+      "I was a commercial airline pilot in Colombia. Today I build web applications with Next.js, TypeScript and Supabase, and I bring one thing from the cockpit that matters just as much here: follow the procedure, check every detail before takeoff, and decide with the information you actually have.",
     location: "Cali, Colombia · Remote or hybrid",
     ctaProjects: "View projects",
     ctaResume: "Download résumé",
@@ -52,7 +52,7 @@ const en: Content = {
     eyebrow: "Projects",
     heading: "Code you can review today",
     intro:
-      "I'd rather show one thing you can open and try than list ten that don't exist. Here's what I've built, with the source in the open.",
+      "One real project, in production, with the source open. I'd rather show that than list ten you can't open.",
     demoLabel: "Live demo",
     repoLabel: "Source code",
     demoUnavailable: "Demo coming soon",
@@ -60,14 +60,16 @@ const en: Content = {
     outcomeLabel: "Outcome",
     roleLabel: "My role",
     items: {
-      "proyecto-1": {
-        name: "TODO: Your project name",
+      "la-53": {
+        name: "Autoservicios La 53",
         summary:
-          "TODO: the problem it solves, in one sentence — the problem, not a feature list.",
+          "A neighbourhood supermarket was taking orders over WhatsApp and tracking stock by hand. I built an online store with cash-on-delivery checkout and an admin panel that brings catalogue, stock and orders together in one place.",
         outcome:
-          "TODO: one measurable result. If nobody uses it yet, measure something real anyway: a Lighthouse score, a load time, works-without-JavaScript. An honest number beats an adjective.",
+          // TODO(David): swap for real numbers once the shop is using it —
+          // products loaded, orders handled, months in use.
+          "Deployed and running in production: public storefront, authenticated admin panel, point of sale with camera-based barcode scanning, and sales reports.",
         role:
-          "TODO: what you did and what you used to do it. Being explicit about AI assistance builds more trust than hiding it — what matters is that you understand the code you ship.",
+          "I built all of it: the Postgres data model with Row Level Security, authentication, image uploads, the storefront and the admin panel. I work with AI assistants to move quickly, and I review and understand every part before calling it done.",
       },
     },
   },
@@ -88,22 +90,21 @@ const en: Content = {
   },
   about: {
     eyebrow: "About",
-    // TODO(David): swap for your real transition, e.g. "From [your trade] to code".
-    heading: "Learning to build, in public",
+    heading: "From the cockpit to web development",
     paragraphs: [
-      "TODO: where you came from — what your job or trade was before code. This is the most important paragraph on the page: it turns \"no experience\" into \"I bring something else\".",
-      "TODO: what brought you to development. The first thing you built or automated, and why it hooked you.",
-      "TODO: the transferable skill you bring. Client-facing work, time management, attention to detail, working under pressure — name it and say where you learned it.",
+      "I was a commercial airline pilot in Colombia. Flying isn't improvising: it's a checklist before every takeoff, procedures you follow even when you're in a hurry, and decisions you have to make with the information available and no room for \"we'll see\".",
+      "I decided to study something different, and web development gave me what I liked about flying without the ceiling: I can build a whole thing from scratch, break it, understand why it broke, and put it back up the same day. Both halves hooked me — the part you see and the part holding it up underneath.",
+      "From aviation I bring the habit of verifying before calling something good, a tolerance for the boring procedures that prevent big problems, and the reflex of taking real responsibility for what I hand over.",
     ],
     photoAlt: `Portrait of ${site.name}`,
     lookingFor:
-      "TODO: what you're looking for. Example: my first junior frontend role, on a team that reviews code and does mentoring.",
+      "I'm looking for my first junior web developer role, on a team that reviews code and does mentoring. I'm based in Cali and open to both remote and hybrid.",
   },
   timeline: {
     eyebrow: "Background",
     heading: "Education & experience",
     intro:
-      "I include the non-technical experience on purpose: it's where I learned to work with people, deadlines and shifting priorities.",
+      "I include my time as a pilot on purpose: it's where I learned to work with procedures, real pressure and responsibility for the outcome.",
     present: "Present",
     kinds: {
       work: "Experience",
@@ -120,6 +121,20 @@ const en: Content = {
           "15 hours of theory and practice covering semantic structure, forms and basic accessibility.",
           "Credential 68a24eb2-3601-4c5f-90c5-b645f4dcdb86, verifiable on the public Platzi profile.",
         ],
+      },
+      // Ready for when you uncomment the entry in shared.ts with real dates.
+      "piloto-comercial": {
+        title: "Commercial Airline Pilot",
+        organization: "TODO: airline or flight school",
+        highlights: [
+          "TODO: a concrete figure. Total flight hours are the aviation equivalent of a metric, and they tell a recruiter you sustained something demanding for years.",
+          "TODO: a responsibility that translates. E.g. operating under strict procedures, coordinating with crew and ATC, or direct responsibility for passenger safety.",
+        ],
+      },
+      "formacion-aeronautica": {
+        title: "TODO: Licence or aviation training",
+        organization: "TODO: institution",
+        highlights: ["TODO: only if it adds something; otherwise delete this entry."],
       },
     },
   },

@@ -10,12 +10,13 @@ import type { Locale, ProjectMeta, SkillGroup, SocialLink, TimelineMeta } from "
 export const site = {
   name: "David Cardona Martinez",
   /**
-   * ⚠️ TODO: update this the moment the first Vercel deploy finishes.
-   * Vercel assigns the subdomain from the project name, so this guess is
-   * probably wrong — and this value feeds the canonical URLs, hreflang, the
-   * sitemap and every OG tag, so a stale value breaks SEO silently.
+   * A `vercel.app` subdomain can only be one label deep, so "david.cardonam"
+   * isn't assignable — `david-cardonam` is the closest valid form. Name the
+   * Vercel project `david-cardonam` on import and this URL will be correct.
+   * If you take a different subdomain, change it here: this value feeds the
+   * canonical URLs, hreflang, the sitemap and every OG tag.
    */
-  url: "https://david-cardona.vercel.app",
+  url: "https://david-cardonam.vercel.app",
   email: "dcardona0512@gmail.com",
   // Full E.164 number, digits only, no "+". Left empty, so WhatsApp is hidden.
   whatsapp: "",
@@ -39,15 +40,11 @@ export const site = {
 } as const;
 
 export const socials: SocialLink[] = [
-  /**
-   * ⚠️ TODO(David): GitHub is missing because the link wasn't included in the
-   * message. Not guessing it — a wrong handle here either 404s or, worse,
-   * points a recruiter at a stranger's profile. Add it as:
-   *   { id: "github", href: "https://github.com/<usuario>", label: "@<usuario>" },
-   *
-   * LinkedIn is worth adding too; it's usually the first thing a recruiter
-   * checks after the CV.
-   */
+  {
+    id: "github",
+    href: "https://github.com/Dcardona0512",
+    label: "@Dcardona0512",
+  },
   { id: "email", href: `mailto:${site.email}`, label: site.email },
   {
     id: "website",
@@ -61,43 +58,60 @@ export const socials: SocialLink[] = [
  * Skills, grouped. `solid` = you can be interviewed on it today.
  * `learning` = you're actively studying it.
  *
- * ⚠️ TODO(David): this list is deliberately conservative. The only thing with
- * evidence behind it right now is the Platzi HTML course, so HTML is the single
- * `solid` entry. Everything else is marked `learning`, and anything you don't
- * actually touch should be deleted rather than left here.
+ * This list is derived from what you've actually shipped, not from a template:
+ * everything marked `solid` appears in the la-53 codebase or in the Platzi
+ * certification. That's the whole point of the split — a recruiter who asks one
+ * question about a `solid` skill you can't defend stops reading, so the honesty
+ * of this column is what makes it worth having.
  *
- * Resist the urge to promote things to `solid` to fill the column. The whole
- * reason this section is credible is that the split is honest — a recruiter who
- * asks one question about a `solid` skill you can't defend stops reading. An
- * short honest list beats a long unverifiable one.
+ * ⚠️ Review it once: if anything here feels like more than you'd want to be
+ * interviewed on today, move it down to `learning`. That's not a step backwards.
  */
 export const skillGroups: SkillGroup[] = [
   {
     id: "languages",
     skills: [
-      { name: "HTML", level: "solid" }, // certified — Platzi, jun 2026
-      { name: "CSS", level: "learning" },
-      { name: "JavaScript", level: "learning" },
+      { name: "HTML", level: "solid" }, // certificado — Platzi, jun 2026
+      { name: "CSS", level: "solid" },
+      { name: "JavaScript", level: "solid" },
+      { name: "TypeScript", level: "learning" },
+      { name: "SQL", level: "learning" },
+    ],
+  },
+  {
+    id: "frontend",
+    skills: [
+      { name: "React", level: "solid" },
+      { name: "Next.js", level: "solid" }, // App Router en producción
+      { name: "Tailwind CSS", level: "solid" },
+      { name: "Accesibilidad (WCAG)", level: "learning" },
+    ],
+  },
+  {
+    id: "backend",
+    skills: [
+      { name: "Supabase", level: "solid" },
+      { name: "PostgreSQL", level: "learning" },
+      { name: "Auth y RLS", level: "learning" },
     ],
   },
   {
     id: "tools",
     skills: [
-      { name: "Git & GitHub", level: "learning" },
-      { name: "Vercel", level: "learning" },
+      { name: "Git & GitHub", level: "solid" },
+      { name: "Vercel", level: "solid" },
     ],
   },
   /**
-   * A group for the AI-assisted workflow, since that's what "Vibe Coder" means
-   * in practice and it's a real, current skill worth naming. Replace these with
-   * the tools you actually use day to day, and delete the group if you'd rather
-   * not lead with it.
+   * The AI-assisted workflow named explicitly. Saying it out loud reads as
+   * method; leaving it out and getting asked in an interview reads as evasion.
+   * Swap these for the tools you actually use.
    */
   {
     id: "ai",
     skills: [
-      { name: "Claude Code", level: "learning" }, // TODO: confirm your tools
-      { name: "ChatGPT", level: "learning" },
+      { name: "Claude Code", level: "solid" }, // TODO: confirma tus herramientas
+      { name: "ChatGPT", level: "solid" },
     ],
   },
 ];
@@ -109,21 +123,23 @@ export const skillGroups: SkillGroup[] = [
  */
 export const projects: ProjectMeta[] = [
   /**
-   * ⚠️ TODO(David): one entry, because you said you have one repo — but I never
-   * got the GitHub link, so `repoUrl` is still null and the card shows
-   * "Repo privado" instead of a button. Fill in `repoUrl`, `stack` and `image`
-   * and this becomes the strongest section on the page.
+   * Autoservicios La 53 — github.com/Dcardona0512/la-53
    *
-   * `demoUrl` matters more than the repo for a non-technical recruiter: if the
-   * project can be deployed to Vercel too, do it — a link they can click and
-   * use beats any description.
+   * Stack and feature list read from the repo, not guessed: Next.js 15 App
+   * Router with route groups, Supabase (Postgres + RLS + Auth + Storage),
+   * Tailwind v4, and @zxing for barcode scanning. Both the storefront and the
+   * admin panel are live and returned 200 when checked.
+   *
+   * ⚠️ TODO(David): add a screenshot at /public/projects/la-53.png (16:9,
+   * ≥1280px wide). Grab the storefront with a few products loaded — that's the
+   * one image a recruiter will actually look at.
    */
   {
-    id: "proyecto-1",
-    stack: ["HTML", "CSS"], // TODO: the real stack
-    demoUrl: null, // TODO: deploy it and paste the URL
-    repoUrl: null, // TODO: https://github.com/<usuario>/<repo>
-    image: null, // TODO: "/projects/proyecto-1.png" (16:9, ≥1280px wide)
+    id: "la-53",
+    stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS"],
+    demoUrl: "https://autoservicios-la-53.vercel.app",
+    repoUrl: "https://github.com/Dcardona0512/la-53",
+    image: null, // TODO: "/projects/la-53.png"
     featured: true,
   },
 ];
@@ -151,15 +167,19 @@ export const timeline: TimelineMeta[] = [
     url: "https://platzi.com/@pilotdavid0512827/",
   },
   /**
-   * ⚠️ TODO(David): add your work history and earlier education here. Include
-   * non-technical jobs — for a career changer that's where the transferable
-   * skills come from, and an empty timeline reads as "no history" rather than
-   * "career changer". Copy this shape, then write the matching text in
-   * es.ts / en.ts under the same id:
+   * ⚠️ TODO(David): descomenta esto y pon TUS fechas reales de piloto comercial.
+   * Lo dejo comentado a propósito: las fechas se renderizan visibles y ordenan
+   * la lista, así que una fecha inventada por mí sería un dato falso en tu
+   * portafolio. El texto ya está escrito en es.ts / en.ts con este mismo id.
    *
-   * { id: "trabajo-anterior", kind: "work", start: "2019-03", end: "2024-12" },
-   * { id: "formacion-previa", kind: "education", start: "2015-09", end: "2019-06" },
+   * Tu etapa como piloto es la entrada más valiosa de esta sección — un
+   * reclutador recuerda «piloto comercial que ahora programa» mucho más que
+   * cualquier curso.
    */
+  // { id: "piloto-comercial", kind: "work", start: "AAAA-MM", end: "AAAA-MM" },
+  //
+  // Y si tienes la licencia o la formación aeronáutica, añádela también:
+  // { id: "formacion-aeronautica", kind: "education", start: "AAAA-MM", end: "AAAA-MM" },
 ];
 
 /** Newest first. Certifications sort by their single month. */
