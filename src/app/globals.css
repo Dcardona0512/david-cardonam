@@ -1,0 +1,229 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   Design tokens — single source of truth for the whole site.
+   Palette: layered near-black surfaces + ONE neon accent (+ a gradient partner).
+   Every text/background pair below is checked against WCAG AA (4.5:1).
+--------------------------------------------------------------------------- */
+:root {
+  /* Surfaces, from deepest to most elevated */
+  --bg: #08080c;
+  --surface-1: #0e0e15;
+  --surface-2: #16161f;
+  --border: #262633;
+  --border-strong: #33334a;
+
+  /* Text: two contrast levels + a muted one for metadata only */
+  --text: #f2f2f7; /* 17.4:1 on --bg */
+  --text-muted: #a8a8bb; /* 7.9:1 on --bg, 7.7:1 on --surface-2 */
+  /* Used for small metadata (dates, labels), so it has to clear 4.5:1 against
+     the *lightest* surface it ever sits on, not just --bg: 5.3:1 on --bg,
+     4.8:1 on --surface-2. Anything darker fails AA at 12px. */
+  --text-faint: #82829a;
+
+  /* The single accent, plus its gradient partner */
+  --accent: #48e5c2; /* neon mint — 11.6:1 on --bg */
+  --accent-strong: #7af5d8;
+  --accent-deep: #0f9e83; /* for accent-as-background with white text */
+  --accent-partner: #7c8cff; /* gradient end only, never text */
+  /* Foreground for anything sitting ON the accent colour. Near-black is the
+     only way to clear 4.5:1 against a neon mint fill (12.1:1 here). */
+  --on-accent: #04120e;
+
+  --accent-glow: color-mix(in oklab, var(--accent) 22%, transparent);
+  --accent-faint: color-mix(in oklab, var(--accent) 8%, transparent);
+
+  /* Fluid type scale */
+  --step--1: clamp(0.83rem, 0.8rem + 0.15vw, 0.9rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.08rem);
+  --step-1: clamp(1.2rem, 1.1rem + 0.5vw, 1.45rem);
+  --step-2: clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  --step-3: clamp(1.9rem, 1.5rem + 2vw, 2.9rem);
+  --step-4: clamp(2.4rem, 1.6rem + 4vw, 4.5rem);
+
+  --radius: 0.875rem;
+  --shell: 72rem;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--border);
+  --color-line-strong: var(--border-strong);
+
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-text-faint: var(--text-faint);
+
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-partner: var(--accent-partner);
+  --color-on-accent: var(--on-accent);
+
+  --font-sans: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-code), ui-monospace, monospace;
+
+  --text-step--1: var(--step--1);
+  --text-step-0: var(--step-0);
+  --text-step-1: var(--step-1);
+  --text-step-2: var(--step-2);
+  --text-step-3: var(--step-3);
+  --text-step-4: var(--step-4);
+
+  --radius-card: var(--radius);
+}
+
+/* This site is dark-only by design, so we declare it to the browser once.
+   That gives us native dark form controls and scrollbars for free. */
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: var(--step-0);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; /* belt-and-braces against wide hero type */
+}
+
+::selection {
+  background-color: var(--accent);
+  color: var(--on-accent);
+}
+
+/* Visible focus everywhere, without the permanent ring on mouse clicks. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------------------------------------------------------------------------
+   Reusable visual primitives. Defined once here so no component hand-rolls
+   its own glass/glow and drifts out of sync.
+--------------------------------------------------------------------------- */
+@utility shell {
+  width: 100%;
+  max-width: var(--shell);
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+/* Frosted surface used by every card, badge and floating bar. */
+@utility glass {
+  background-color: color-mix(in oklab, var(--surface-1) 82%, transparent);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+/* 1px gradient border that fades from accent to nothing — used on hover
+   states and featured cards. Implemented with a mask so it stays crisp. */
+@utility ring-gradient {
+  position: relative;
+}
+@utility ring-gradient-on {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-partner) 45%,
+    transparent 85%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Accent text that still passes contrast, used for eyebrow labels. */
+@utility text-gradient {
+  background: linear-gradient(100deg, var(--accent-strong), var(--accent-partner));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Thin mono uppercase label used above every section heading. */
+@utility eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* ---------------------------------------------------------------------------
+   Above-the-fold entrance.
+
+   The hero deliberately does NOT use the JS `Reveal` components. Those start at
+   opacity:0 and only animate once React has hydrated, which made the headline
+   the Largest Contentful Paint element and pushed LCP out to ~3s on throttled
+   mobile. Running the same animation from CSS starts it at first paint instead,
+   so LCP lands with FCP and the hero needs no JavaScript at all.
+--------------------------------------------------------------------------- */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-stagger > * {
+  animation: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-stagger > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.hero-stagger > *:nth-child(2) {
+  animation-delay: 0.13s;
+}
+.hero-stagger > *:nth-child(3) {
+  animation-delay: 0.21s;
+}
+.hero-stagger > *:nth-child(4) {
+  animation-delay: 0.29s;
+}
+.hero-stagger > *:nth-child(5) {
+  animation-delay: 0.37s;
+}
+.hero-stagger > *:nth-child(6) {
+  animation-delay: 0.45s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-stagger > * {
+    animation: none;
+  }
+}
+
+@utility grid-lines {
+  background-image:
+    linear-gradient(to right, var(--border) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+}
