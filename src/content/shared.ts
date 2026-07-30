@@ -141,15 +141,18 @@ export const projects: ProjectMeta[] = [
    * Vuelve a desplegar la-53 y pega aquí la URL — es lo que más peso tiene de
    * todo el portafolio, porque es lo único que un reclutador puede usar.
    *
-   * ⚠️ TODO(David): falta la captura en /public/projects/la-53.png (16:9,
-   * ≥1280px). No pude tomarla yo porque la tienda no está en línea.
+   * La captura es el panel de administración. Antes de guardarla se difuminaron
+   * dos zonas: el correo de la barra superior y el nombre de una clienta real en
+   * «Pedidos recientes» — ese dato es de una tercera persona, no de David.
+   * Es 1.99:1 y la tarjeta la recorta a 16:9, pero solo un 5% por lado, así que
+   * ni el logo ni el botón «Salir» se pierden.
    */
   {
     id: "la-53",
     stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS"],
     demoUrl: null, // volver a poner la URL cuando la demo esté de nuevo arriba
     repoUrl: "https://github.com/Dcardona0512/la-53", // verificado, 200
-    image: null, // TODO: "/projects/la-53.png"
+    image: "/projects/la-53.png",
     featured: true,
   },
 ];

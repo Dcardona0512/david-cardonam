@@ -16,25 +16,30 @@ import { cn } from "@/lib/utils";
 function Preview({
   image,
   name,
+  alt,
   featured,
 }: {
   image: string | null;
   name: string;
+  alt?: string;
   featured: boolean;
 }) {
   if (image) {
     return (
       <Image
         src={image}
-        alt={name}
+        // Fall back to the name only if no description was written; the alt
+        // should say what the screenshot shows, not repeat the heading above it.
+        alt={alt ?? name}
         width={1280}
         height={720}
-        // Explicit sizes so the browser doesn't download the 1280px file for a
-        // 400px slot on mobile. Featured cards span the full grid width.
+        // Explicit sizes so the browser doesn't download the full-width file for
+        // a 400px slot on mobile. The shell is 72rem wide, so a featured card
+        // spans ~1112px and a regular one ~544px.
         sizes={
           featured
-            ? "(min-width: 1024px) 1024px, 100vw"
-            : "(min-width: 1024px) 512px, 100vw"
+            ? "(min-width: 1024px) 1112px, 100vw"
+            : "(min-width: 1024px) 544px, 100vw"
         }
         className="h-full w-full object-cover"
       />
@@ -104,7 +109,11 @@ function ProjectCard({
       as="li"
       className={cn(
         "ring-gradient group glass flex flex-col overflow-hidden rounded-card transition-colors duration-300 hover:border-line-strong",
-        featured && "lg:col-span-2 lg:flex-row",
+        // Featured cards span both columns but keep the image on top rather than
+        // beside the text. A side-by-side layout gives the image a tall, narrow
+        // half-column, and `object-cover` then crops a wide screenshot down to a
+        // vertical sliver — useless for a dashboard or any landscape capture.
+        featured && "lg:col-span-2",
       )}
     >
       <span
@@ -112,13 +121,13 @@ function ProjectCard({
         className="ring-gradient-on opacity-0 transition-opacity duration-300 group-hover:opacity-100"
       />
 
-      <div
-        className={cn(
-          "relative aspect-video shrink-0 overflow-hidden border-b border-line",
-          featured && "lg:aspect-auto lg:w-1/2 lg:border-r lg:border-b-0",
-        )}
-      >
-        <Preview image={meta.image} name={copy.name} featured={featured} />
+      <div className="relative aspect-video shrink-0 overflow-hidden border-b border-line">
+        <Preview
+          image={meta.image}
+          name={copy.name}
+          alt={copy.imageAlt}
+          featured={featured}
+        />
       </div>
 
       <div className="flex flex-1 flex-col p-6 sm:p-7">

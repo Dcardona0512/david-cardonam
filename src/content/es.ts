@@ -80,6 +80,8 @@ const es: Content = {
           "Aplicación completa en dos frentes: tienda pública con carrito y checkout contra entrega, y panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara, alertas de stock bajo e informes de ventas.",
         role:
           "Lo construí completo: modelo de datos en Postgres con Row Level Security, autenticación, subida de imágenes, la tienda y el panel. Trabajo con asistentes de IA para avanzar rápido, y reviso y entiendo cada parte antes de darla por terminada.",
+        imageAlt:
+          "Panel de administración con el resumen del negocio: número de productos, pedidos pendientes, ventas y ganancia del mes, lista de pedidos recientes y alertas de stock bajo.",
       },
     },
   },

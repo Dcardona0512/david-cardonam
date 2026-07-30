@@ -71,6 +71,8 @@ const en: Content = {
           "A complete application on two fronts: a public storefront with cart and cash-on-delivery checkout, and an admin panel with authentication, point of sale with camera-based barcode scanning, low-stock alerts and sales reports.",
         role:
           "I built all of it: the Postgres data model with Row Level Security, authentication, image uploads, the storefront and the admin panel. I work with AI assistants to move quickly, and I review and understand every part before calling it done.",
+        imageAlt:
+          "Admin dashboard showing the business summary: product count, pending orders, monthly sales and profit, a list of recent orders and low-stock alerts.",
       },
     },
   },

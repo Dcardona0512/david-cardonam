@@ -84,6 +84,12 @@ export interface ProjectCopy {
   outcome: string;
   /** What *you* built, for projects where that isn't obvious. */
   role?: string;
+  /**
+   * Alt text for the screenshot. Describe what the image *shows*, not the
+   * project name — a screen reader user already has the name from the heading
+   * right next to it, so repeating it conveys nothing.
+   */
+  imageAlt?: string;
 }
 
 export interface TimelineCopy {
