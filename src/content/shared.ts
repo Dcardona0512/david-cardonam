@@ -10,13 +10,15 @@ import type { Locale, ProjectMeta, SkillGroup, SocialLink, TimelineMeta } from "
 export const site = {
   name: "David Cardona Martinez",
   /**
-   * A `vercel.app` subdomain can only be one label deep, so "david.cardonam"
-   * isn't assignable — `david-cardonam` is the closest valid form. Name the
-   * Vercel project `david-cardonam` on import and this URL will be correct.
-   * If you take a different subdomain, change it here: this value feeds the
-   * canonical URLs, hreflang, the sitemap and every OG tag.
+   * The live production URL, verified against the deployment (no hyphen —
+   * Vercel assigned `davidcardonam`, not `david-cardonam`).
+   *
+   * If this ever stops matching the real domain, the site keeps working but
+   * silently breaks SEO: it feeds the canonical tag, hreflang, the sitemap and
+   * every OG tag, so search engines would index a URL that 404s and link
+   * previews would fail to load. Change it here and nowhere else.
    */
-  url: "https://david-cardonam.vercel.app",
+  url: "https://davidcardonam.vercel.app",
   email: "dcardona0512@gmail.com",
   // Full E.164 number, digits only, no "+". Left empty, so WhatsApp is hidden.
   whatsapp: "",
