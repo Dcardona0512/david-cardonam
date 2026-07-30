@@ -180,16 +180,16 @@ export const timeline: TimelineMeta[] = [
     url: "https://platzi.com/@pilotdavid0512827/",
   },
   /**
-   * ⚠️ TODO(David): descomenta esto y pon TUS fechas reales de piloto comercial.
+   * ⚠️ TODO(David): descomenta esto y pon TU fecha real de inicio como piloto.
    * Lo dejo comentado a propósito: las fechas se renderizan visibles y ordenan
    * la lista, así que una fecha inventada por mí sería un dato falso en tu
    * portafolio. El texto ya está escrito en es.ts / en.ts con este mismo id.
    *
-   * Tu etapa como piloto es la entrada más valiosa de esta sección — un
-   * reclutador recuerda «piloto comercial que ahora programa» mucho más que
-   * cualquier curso.
+   * `end: null` significa «actualidad», que es tu caso: sigues volando. Así la
+   * entrada aparece la primera y se lee «piloto comercial en activo que además
+   * construye software», que es más fuerte que un ex piloto.
    */
-  // { id: "piloto-comercial", kind: "work", start: "AAAA-MM", end: "AAAA-MM" },
+  // { id: "piloto-comercial", kind: "work", start: "AAAA-MM", end: null },
   //
   // Y si tienes la licencia o la formación aeronáutica, añádela también:
   // { id: "formacion-aeronautica", kind: "education", start: "AAAA-MM", end: "AAAA-MM" },

@@ -13,7 +13,7 @@ const en: Content = {
     title: `${site.name} — Junior Web Developer`,
     description:
       // TODO(David): add "and a downloadable résumé" once the PDF is in place.
-      "Junior web developer in Cali, Colombia. Former commercial airline pilot. I build applications with Next.js, TypeScript and Supabase. Portfolio with a real project and open source code.",
+      "Junior web developer in Cali, Colombia. Working commercial airline pilot moving into web development. I build applications with Next.js, TypeScript and Supabase. Portfolio with a real project and open source code.",
     keywords: [
       "junior web developer",
       "Next.js",
@@ -41,8 +41,10 @@ const en: Content = {
     availability: "Open to new opportunities",
     name: site.name,
     headline: "Junior Web Developer",
+    // Present tense: David is a working pilot moving into development, not a
+    // former one. Keep this in sync with the Spanish pitch.
     pitch:
-      "I was a commercial airline pilot in Colombia. Today I build web applications with Next.js, TypeScript and Supabase, and I bring one thing from the cockpit that matters just as much here: follow the procedure, check every detail before takeoff, and decide with the information you actually have.",
+      "I'm a commercial airline pilot in Colombia, and I want to work in web development. I build applications with Next.js, TypeScript and Supabase, and I bring one thing from the cockpit that matters just as much here: follow the procedure, check every detail before takeoff, and decide with the information you actually have.",
     location: "Cali, Colombia · Remote or hybrid",
     ctaProjects: "View projects",
     ctaResume: "Download résumé",
@@ -95,9 +97,9 @@ const en: Content = {
     eyebrow: "About",
     heading: "From the cockpit to web development",
     paragraphs: [
-      "I was a commercial airline pilot in Colombia. Flying isn't improvising: it's a checklist before every takeoff, procedures you follow even when you're in a hurry, and decisions you have to make with the information available and no room for \"we'll see\".",
-      "I decided to study something different, and web development gave me what I liked about flying without the ceiling: I can build a whole thing from scratch, break it, understand why it broke, and put it back up the same day. Both halves hooked me — the part you see and the part holding it up underneath.",
-      "From aviation I bring the habit of verifying before calling something good, a tolerance for the boring procedures that prevent big problems, and the reflex of taking real responsibility for what I hand over.",
+      "I'm a commercial airline pilot in Colombia. Flying isn't improvising: it's a checklist before every takeoff, procedures you follow even when you're in a hurry, and decisions you have to make with the information available and no room for \"we'll see\".",
+      "I wanted to learn something different, and web development gave me what I like about flying without the ceiling: I can build a whole thing from scratch, break it, understand why it broke, and put it back up the same day. Both halves hooked me — the part you see and the part holding it up underneath.",
+      "I'm still flying while I make this move, and from aviation I bring the habit of verifying before calling something good, a tolerance for the boring procedures that prevent big problems, and the reflex of taking real responsibility for what I hand over.",
     ],
     photoAlt: `Portrait of ${site.name}`,
     lookingFor:
@@ -107,7 +109,7 @@ const en: Content = {
     eyebrow: "Background",
     heading: "Education & experience",
     intro:
-      "I include my time as a pilot on purpose: it's where I learned to work with procedures, real pressure and responsibility for the outcome.",
+      "I include my work as a pilot on purpose: it's where I learned — and am still learning — to work with procedures, real pressure and responsibility for the outcome.",
     present: "Present",
     kinds: {
       work: "Experience",
@@ -130,7 +132,7 @@ const en: Content = {
         title: "Commercial Airline Pilot",
         organization: "TODO: airline or flight school",
         highlights: [
-          "TODO: a concrete figure. Total flight hours are the aviation equivalent of a metric, and they tell a recruiter you sustained something demanding for years.",
+          "TODO: a concrete figure. Total flight hours are the aviation equivalent of a metric, and they tell a recruiter you sustain something demanding.",
           "TODO: a responsibility that translates. E.g. operating under strict procedures, coordinating with crew and ATC, or direct responsibility for passenger safety.",
         ],
       },

@@ -16,7 +16,7 @@ const es: Content = {
     title: `${site.name} — Desarrollador Web Junior`,
     description:
       // TODO(David): añade «y CV descargable» cuando subas el PDF.
-      "Desarrollador web junior en Cali, Colombia. Ex piloto comercial de avión. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto real y código abierto.",
+      "Desarrollador web junior en Cali, Colombia. Piloto comercial de avión en activo, en transición al desarrollo web. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto real y código abierto.",
     keywords: [
       "desarrollador web junior",
       "Next.js",
@@ -46,11 +46,15 @@ const es: Content = {
     headline: "Desarrollador Web Junior",
     /**
      * The single most important sentence on the site: it names the transition
-     * and turns it into an advantage instead of a gap. Rewrite it in your own
-     * voice if you want, but keep the shape — pilot first, then what you build.
+     * and turns it into an advantage instead of a gap.
+     *
+     * Present tense throughout — David is a *working* pilot moving into web
+     * development, not a former one. That's the stronger version of the story
+     * anyway: he holds down a demanding licensed profession and ships software
+     * alongside it.
      */
     pitch:
-      "Fui piloto comercial de avión en Colombia. Hoy construyo aplicaciones web con Next.js, TypeScript y Supabase, y traigo de la cabina algo que aquí importa igual: seguir procedimientos, revisar cada detalle antes de despegar y decidir con la información que tengo.",
+      "Soy piloto comercial de avión en Colombia y quiero dedicarme al desarrollo web. Construyo aplicaciones con Next.js, TypeScript y Supabase, y traigo de la cabina algo que aquí importa igual: seguir procedimientos, revisar cada detalle antes de despegar y decidir con la información que tengo.",
     location: "Cali, Colombia · Remoto o híbrido",
     ctaProjects: "Ver proyectos",
     ctaResume: "Descargar CV",
@@ -104,9 +108,9 @@ const es: Content = {
     eyebrow: "Sobre mí",
     heading: "De la cabina de un avión al desarrollo web",
     paragraphs: [
-      "Fui piloto comercial de avión en Colombia. Volar no es improvisar: es checklist antes de cada despegue, procedimientos que se siguen aunque tengas prisa, y decisiones que hay que tomar con la información disponible y sin margen para el «ya veremos».",
-      "Decidí estudiar algo distinto y encontré en el desarrollo web lo que me gustaba de volar, pero sin techo: puedo construir una cosa entera desde cero, romperla, entender por qué se rompió y volver a levantarla el mismo día. Me engancharon las dos partes, la que se ve y la que sostiene todo por debajo.",
-      "De la aviación me traigo el hábito de verificar antes de dar algo por bueno, la tolerancia a los procedimientos aburridos que evitan problemas grandes, y la costumbre de trabajar con responsabilidad real sobre lo que entrego.",
+      "Soy piloto comercial de avión en Colombia. Volar no es improvisar: es checklist antes de cada despegue, procedimientos que se siguen aunque tengas prisa, y decisiones que hay que tomar con la información disponible y sin margen para el «ya veremos».",
+      "Quise aprender algo distinto y encontré en el desarrollo web lo que me gusta de volar, pero sin techo: puedo construir una cosa entera desde cero, romperla, entender por qué se rompió y volver a levantarla el mismo día. Me engancharon las dos partes, la que se ve y la que sostiene todo por debajo.",
+      "Sigo volando mientras hago esta transición, y de la aviación traigo el hábito de verificar antes de dar algo por bueno, la tolerancia a los procedimientos aburridos que evitan problemas grandes, y la costumbre de trabajar con responsabilidad real sobre lo que entrego.",
     ],
     photoAlt: `Retrato de ${site.name}`,
     lookingFor:
@@ -116,7 +120,7 @@ const es: Content = {
     eyebrow: "Trayectoria",
     heading: "Formación y experiencia",
     intro:
-      "Incluyo mi etapa como piloto a propósito: es donde aprendí a trabajar con procedimientos, presión real y responsabilidad sobre el resultado.",
+      "Incluyo mi trabajo como piloto a propósito: es donde aprendí, y sigo aprendiendo, a trabajar con procedimientos, presión real y responsabilidad sobre el resultado.",
     present: "Actualidad",
     kinds: {
       work: "Experiencia",
@@ -143,7 +147,7 @@ const es: Content = {
         title: "Piloto Comercial de Avión",
         organization: "TODO: aerolínea o escuela de vuelo",
         highlights: [
-          "TODO: un dato concreto. Las horas de vuelo acumuladas son el equivalente aeronáutico de una métrica, y a un reclutador le dicen «esta persona sostuvo algo exigente durante años».",
+          "TODO: un dato concreto. Las horas de vuelo acumuladas son el equivalente aeronáutico de una métrica, y a un reclutador le dicen «esta persona sostiene algo exigente».",
           "TODO: una responsabilidad que se traduzca. Ej.: operar bajo procedimientos estrictos, coordinar con tripulación y torre, o responsabilidad directa sobre la seguridad de los pasajeros.",
         ],
       },
