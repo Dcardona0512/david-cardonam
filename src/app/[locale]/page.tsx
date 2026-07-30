@@ -41,7 +41,13 @@ export default async function Page({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <ScrollProgress />
-      <Header locale={locale} content={content} resumeHref={resumeHref} />
+      <Header
+        locale={locale}
+        nav={content.nav}
+        logoName={content.hero.name}
+        resumeLabel={content.hero.ctaResume}
+        resumeHref={resumeHref}
+      />
 
       <main id="main">
         <Hero content={content} resumeHref={resumeHref} />

@@ -11,13 +11,25 @@ import { cn } from "@/lib/utils";
 
 const SECTION_IDS = ["projects", "skills", "about", "timeline", "contact"] as const;
 
+/**
+ * This is a Client Component, so every prop it receives is serialised into the
+ * page's RSC payload and is readable in view-source. Taking the whole `Content`
+ * object shipped the entire dictionary — including copy for timeline entries
+ * that aren't even rendered yet, TODO placeholders and all. So it takes only
+ * the strings it actually paints.
+ */
 export function Header({
   locale,
-  content,
+  nav,
+  logoName,
+  resumeLabel,
   resumeHref,
 }: {
   locale: Locale;
-  content: Content;
+  nav: Content["nav"];
+  /** Full name; only the first word is shown in the logo mark. */
+  logoName: string;
+  resumeLabel: string;
   /** Null when no CV PDF exists yet — the button is omitted rather than broken. */
   resumeHref: string | null;
 }) {
@@ -25,7 +37,7 @@ export function Header({
   const [scrolled, setScrolled] = useState(false);
   const active = useActiveSection([...SECTION_IDS]);
 
-  const links = SECTION_IDS.map((id) => ({ id, label: content.nav[id] }));
+  const links = SECTION_IDS.map((id) => ({ id, label: nav[id] }));
 
   // Only used to switch the header between transparent and frosted, so a
   // passive listener with a boolean is enough — no per-pixel state.
@@ -71,11 +83,11 @@ export function Header({
           className="inline-flex items-center py-2 font-mono text-step-0 font-medium tracking-tight"
         >
           <span className="text-accent">&lt;</span>
-          {content.hero.name.split(" ")[0]}
+          {logoName.split(" ")[0]}
           <span className="text-accent"> /&gt;</span>
         </a>
 
-        <nav aria-label={content.nav.primaryLabel} className="hidden md:block">
+        <nav aria-label={nav.primaryLabel} className="hidden md:block">
           <ul className="flex items-center gap-1">
             {links.map((link) => (
               <li key={link.id}>
@@ -105,7 +117,7 @@ export function Header({
         <div className="flex items-center gap-2">
           <LocaleSwitcher
             current={locale}
-            label={content.nav.languageLabel}
+            label={nav.languageLabel}
             className="hidden sm:flex"
           />
           {resumeHref ? (
@@ -115,7 +127,7 @@ export function Header({
               size="sm"
               className="hidden sm:inline-flex"
             >
-              {content.hero.ctaResume}
+              {resumeLabel}
             </ButtonLink>
           ) : null}
 
@@ -124,7 +136,7 @@ export function Header({
             onClick={() => setOpen((value) => !value)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            aria-label={open ? content.nav.menuClose : content.nav.menuOpen}
+            aria-label={open ? nav.menuClose : nav.menuOpen}
             className="glass rounded-full p-2.5 text-text md:hidden"
           >
             {open ? <X size={18} aria-hidden /> : <Menu size={18} aria-hidden />}
@@ -139,7 +151,7 @@ export function Header({
           id="mobile-menu"
           className="glass border-t border-line md:hidden"
         >
-          <nav aria-label={content.nav.primaryLabel} className="shell py-4">
+          <nav aria-label={nav.primaryLabel} className="shell py-4">
             <ul className="flex flex-col gap-1">
               {links.map((link) => (
                 <li key={link.id}>
@@ -161,10 +173,10 @@ export function Header({
             </ul>
 
             <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-4">
-              <LocaleSwitcher current={locale} label={content.nav.languageLabel} />
+              <LocaleSwitcher current={locale} label={nav.languageLabel} />
               {resumeHref ? (
                 <ButtonLink href={resumeHref} download size="sm">
-                  {content.hero.ctaResume}
+                  {resumeLabel}
                 </ButtonLink>
               ) : null}
             </div>
