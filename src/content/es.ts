@@ -2,19 +2,21 @@ import { site } from "./shared";
 import type { Content } from "./types";
 
 /**
- * Spanish content. ⚠️ TODO(you): the prose below is placeholder text written to
- * show the right *shape* of a strong career-change portfolio. Rewrite it in
- * your own words — a recruiter can smell template copy instantly.
+ * Spanish content — this is the canonical version; `en.ts` is its translation.
  *
- * Keep the constraints: pitch in one sentence, one measurable outcome per
- * project, highlights that contain numbers.
+ * The prose here is real, not placeholder: David's pilot-to-developer story and
+ * the la-53 project. Anything still marked `TODO` is waiting on a fact only he
+ * has (dates, flight hours), never on wording.
+ *
+ * Keep the constraints when editing: pitch in one sentence, one outcome per
+ * project, and highlights that contain numbers rather than adjectives.
  */
 const es: Content = {
   meta: {
     title: `${site.name} — Desarrollador Web Junior`,
     description:
       // TODO(David): añade «y CV descargable» cuando subas el PDF.
-      "Desarrollador web junior en Cali, Colombia. Ex piloto comercial. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto en producción y código abierto.",
+      "Desarrollador web junior en Cali, Colombia. Ex piloto comercial de avión. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto real y código abierto.",
     keywords: [
       "desarrollador web junior",
       "Next.js",
@@ -58,7 +60,7 @@ const es: Content = {
     eyebrow: "Proyectos",
     heading: "Código que puedes revisar hoy",
     intro:
-      "Un proyecto real, en producción y con el código abierto. Prefiero eso a una lista de diez que no puedes abrir.",
+      "Un proyecto real, con el código abierto para que lo revises. Prefiero eso a una lista de diez que no puedes abrir.",
     demoLabel: "Ver demo",
     repoLabel: "Ver código",
     demoUnavailable: "Demo en preparación",
@@ -71,9 +73,11 @@ const es: Content = {
         summary:
           "Un supermercado de barrio tomaba los pedidos por WhatsApp y llevaba el inventario a mano. Construí una tienda en línea con pago contra entrega y un panel de administración que unifica catálogo, stock y pedidos en un solo sitio.",
         outcome:
-          // TODO(David): si ya lo está usando el negocio, cámbialo por el dato
-          // real: nº de productos cargados, pedidos gestionados, meses en uso.
-          "Desplegado y funcionando en producción: tienda pública, panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara e informes de ventas.",
+          // Describe el alcance construido, no el estado del despliegue: la demo
+          // está caída ahora mismo (ver TODO en shared.ts). Cuando vuelva a estar
+          // arriba, añade el dato real: productos cargados, pedidos gestionados,
+          // meses en uso.
+          "Aplicación completa en dos frentes: tienda pública con carrito y checkout contra entrega, y panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara, alertas de stock bajo e informes de ventas.",
         role:
           "Lo construí completo: modelo de datos en Postgres con Row Level Security, autenticación, subida de imágenes, la tienda y el panel. Trabajo con asistentes de IA para avanzar rápido, y reviso y entiendo cada parte antes de darla por terminada.",
       },

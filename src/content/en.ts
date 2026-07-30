@@ -5,15 +5,15 @@ import type { Content } from "./types";
  * English content. Mirrors `es.ts` key for key — TypeScript enforces that, so
  * if you add a field in one language the build fails until you add it in both.
  *
- * ⚠️ TODO(you): translate your own Spanish copy here rather than machine
- * translating it. International recruiters read this version.
+ * International recruiters read this version, so keep it hand-written: translate
+ * changes from `es.ts` deliberately rather than running them through a machine.
  */
 const en: Content = {
   meta: {
     title: `${site.name} — Junior Web Developer`,
     description:
       // TODO(David): add "and a downloadable résumé" once the PDF is in place.
-      "Junior web developer in Cali, Colombia. Former commercial airline pilot. I build applications with Next.js, TypeScript and Supabase. Portfolio with a project in production and open source code.",
+      "Junior web developer in Cali, Colombia. Former commercial airline pilot. I build applications with Next.js, TypeScript and Supabase. Portfolio with a real project and open source code.",
     keywords: [
       "junior web developer",
       "Next.js",
@@ -52,7 +52,7 @@ const en: Content = {
     eyebrow: "Projects",
     heading: "Code you can review today",
     intro:
-      "One real project, in production, with the source open. I'd rather show that than list ten you can't open.",
+      "One real project, with the source open so you can read it. I would rather show that than list ten you can not open.",
     demoLabel: "Live demo",
     repoLabel: "Source code",
     demoUnavailable: "Demo coming soon",
@@ -65,9 +65,10 @@ const en: Content = {
         summary:
           "A neighbourhood supermarket was taking orders over WhatsApp and tracking stock by hand. I built an online store with cash-on-delivery checkout and an admin panel that brings catalogue, stock and orders together in one place.",
         outcome:
-          // TODO(David): swap for real numbers once the shop is using it —
-          // products loaded, orders handled, months in use.
-          "Deployed and running in production: public storefront, authenticated admin panel, point of sale with camera-based barcode scanning, and sales reports.",
+          // Describes the scope built, not the deployment status: the demo is
+          // currently down (see the TODO in shared.ts). Add real numbers once
+          // it's back up — products loaded, orders handled, months in use.
+          "A complete application on two fronts: a public storefront with cart and cash-on-delivery checkout, and an admin panel with authentication, point of sale with camera-based barcode scanning, low-stock alerts and sales reports.",
         role:
           "I built all of it: the Postgres data model with Row Level Security, authentication, image uploads, the storefront and the admin panel. I work with AI assistants to move quickly, and I review and understand every part before calling it done.",
       },

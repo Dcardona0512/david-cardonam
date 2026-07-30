@@ -130,15 +130,23 @@ export const projects: ProjectMeta[] = [
    * Tailwind v4, and @zxing for barcode scanning. Both the storefront and the
    * admin panel are live and returned 200 when checked.
    *
-   * ⚠️ TODO(David): add a screenshot at /public/projects/la-53.png (16:9,
-   * ≥1280px wide). Grab the storefront with a few products loaded — that's the
-   * one image a recruiter will actually look at.
+   * ⚠️ TODO(David): la demo está caída. https://autoservicios-la-53.vercel.app
+   * devuelve DEPLOYMENT_NOT_FOUND y tu equipo de Vercel no tiene proyectos, así
+   * que ese despliegue ya no existe. Lo dejo en `null` a propósito: la tarjeta
+   * muestra «Demo en preparación», que es mejor que mandar a un reclutador a un
+   * 404 de Vercel.
+   *
+   * Vuelve a desplegar la-53 y pega aquí la URL — es lo que más peso tiene de
+   * todo el portafolio, porque es lo único que un reclutador puede usar.
+   *
+   * ⚠️ TODO(David): falta la captura en /public/projects/la-53.png (16:9,
+   * ≥1280px). No pude tomarla yo porque la tienda no está en línea.
    */
   {
     id: "la-53",
     stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS"],
-    demoUrl: "https://autoservicios-la-53.vercel.app",
-    repoUrl: "https://github.com/Dcardona0512/la-53",
+    demoUrl: null, // volver a poner la URL cuando la demo esté de nuevo arriba
+    repoUrl: "https://github.com/Dcardona0512/la-53", // verificado, 200
     image: null, // TODO: "/projects/la-53.png"
     featured: true,
   },
