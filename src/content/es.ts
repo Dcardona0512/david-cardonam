@@ -16,7 +16,7 @@ const es: Content = {
     title: `${site.name} — Desarrollador Web Junior`,
     description:
       // TODO(David): añade «y CV descargable» cuando subas el PDF.
-      "Desarrollador web junior en Cali, Colombia. Piloto comercial de avión en activo, en transición al desarrollo web. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto real y código abierto.",
+      "Desarrollador web junior en Cali, Colombia. Piloto comercial de avión en activo, en transición al desarrollo web. Construyo aplicaciones con Next.js, TypeScript y Supabase. Portafolio con proyecto en producción y código abierto.",
     keywords: [
       "desarrollador web junior",
       "Next.js",
@@ -64,7 +64,7 @@ const es: Content = {
     eyebrow: "Proyectos",
     heading: "Código que puedes revisar hoy",
     intro:
-      "Un proyecto real, con el código abierto para que lo revises. Prefiero eso a una lista de diez que no puedes abrir.",
+      "Un proyecto real, desplegado y con el código abierto. Puedes abrirlo, usarlo y leer cómo está hecho — prefiero eso a una lista de diez que no existen.",
     demoLabel: "Ver demo",
     repoLabel: "Ver código",
     demoUnavailable: "Demo en preparación",
@@ -77,11 +77,10 @@ const es: Content = {
         summary:
           "Un supermercado de barrio tomaba los pedidos por WhatsApp y llevaba el inventario a mano. Construí una tienda en línea con pago contra entrega y un panel de administración que unifica catálogo, stock y pedidos en un solo sitio.",
         outcome:
-          // Describe el alcance construido, no el estado del despliegue: la demo
-          // está caída ahora mismo (ver TODO en shared.ts). Cuando vuelva a estar
-          // arriba, añade el dato real: productos cargados, pedidos gestionados,
-          // meses en uso.
-          "Aplicación completa en dos frentes: tienda pública con carrito y checkout contra entrega, y panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara, alertas de stock bajo e informes de ventas.",
+          // TODO(David): cuando el negocio lleve un tiempo usándolo, cambia esto
+          // por el dato duro: productos cargados, pedidos gestionados, meses en
+          // uso. Un número concreto pesa más que una lista de funcionalidades.
+          "Desplegado y en funcionamiento: tienda pública con carrito y checkout contra entrega, panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara, alertas de stock bajo e informes de ventas.",
         role:
           "Lo construí completo: modelo de datos en Postgres con Row Level Security, autenticación, subida de imágenes, la tienda y el panel. Trabajo con asistentes de IA para avanzar rápido, y reviso y entiendo cada parte antes de darla por terminada.",
         imageAlt:
@@ -112,7 +111,9 @@ const es: Content = {
       "Quise aprender algo distinto y encontré en el desarrollo web lo que me gusta de volar, pero sin techo: puedo construir una cosa entera desde cero, romperla, entender por qué se rompió y volver a levantarla el mismo día. Me engancharon las dos partes, la que se ve y la que sostiene todo por debajo.",
       "Sigo volando mientras hago esta transición, y de la aviación traigo el hábito de verificar antes de dar algo por bueno, la tolerancia a los procedimientos aburridos que evitan problemas grandes, y la costumbre de trabajar con responsabilidad real sobre lo que entrego.",
     ],
-    photoAlt: `Retrato de ${site.name}`,
+    // Describe la escena, no solo «retrato»: para quien usa lector de pantalla,
+    // que salga en cabina es parte del mensaje de esta sección.
+    photoAlt: `${site.name} en la cabina de un avión, con cascos de aviación`,
     lookingFor:
       "Busco mi primera oportunidad como desarrollador web junior, en un equipo donde se revise código y se haga mentoría. Estoy en Cali y me interesa tanto remoto como híbrido.",
   },
@@ -143,12 +144,21 @@ const es: Content = {
        * fechas reales. Los highlights están en TODO porque solo tú conoces los
        * números — y en esta sección los números son lo que convence.
        */
+      /**
+       * ⚠️ TODO(David): dos cosas que solo tú sabes y que harían esta entrada
+       * mucho más fuerte:
+       *  1. La aerolínea o escuela de vuelo, en `organization`. Lo dejo genérico
+       *     porque no me lo has dicho y no me lo voy a inventar.
+       *  2. Tus horas de vuelo acumuladas, como primer highlight. Es el
+       *     equivalente aeronáutico de una métrica y es lo único de esta
+       *     sección que un reclutador puede comparar con algo.
+       */
       "piloto-comercial": {
         title: "Piloto Comercial de Avión",
-        organization: "TODO: aerolínea o escuela de vuelo",
+        organization: "Aviación comercial · Colombia",
         highlights: [
-          "TODO: un dato concreto. Las horas de vuelo acumuladas son el equivalente aeronáutico de una métrica, y a un reclutador le dicen «esta persona sostiene algo exigente».",
-          "TODO: una responsabilidad que se traduzca. Ej.: operar bajo procedimientos estrictos, coordinar con tripulación y torre, o responsabilidad directa sobre la seguridad de los pasajeros.",
+          "Operación bajo procedimientos estrictos y listas de verificación, con responsabilidad directa sobre la seguridad a bordo.",
+          "Decisiones con información incompleta y bajo presión de tiempo, coordinando con tripulación y control aéreo.",
         ],
       },
       "formacion-aeronautica": {

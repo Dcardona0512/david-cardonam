@@ -44,8 +44,8 @@ export function About({ content }: { content: Content }) {
               <Image
                 src={site.photo}
                 alt={content.about.photoAlt}
-                width={600}
-                height={600}
+                width={800}
+                height={800}
                 sizes="(min-width: 1024px) 288px, 192px"
                 className="h-full w-full object-cover"
               />

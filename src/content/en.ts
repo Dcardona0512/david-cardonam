@@ -13,7 +13,7 @@ const en: Content = {
     title: `${site.name} — Junior Web Developer`,
     description:
       // TODO(David): add "and a downloadable résumé" once the PDF is in place.
-      "Junior web developer in Cali, Colombia. Working commercial airline pilot moving into web development. I build applications with Next.js, TypeScript and Supabase. Portfolio with a real project and open source code.",
+      "Junior web developer in Cali, Colombia. Working commercial airline pilot moving into web development. I build applications with Next.js, TypeScript and Supabase. Portfolio with a project in production and open source code.",
     keywords: [
       "junior web developer",
       "Next.js",
@@ -54,7 +54,7 @@ const en: Content = {
     eyebrow: "Projects",
     heading: "Code you can review today",
     intro:
-      "One real project, with the source open so you can read it. I would rather show that than list ten you can not open.",
+      "One real project, deployed, with the source open. You can open it, use it and read how it's built — I'd rather show that than list ten that don't exist.",
     demoLabel: "Live demo",
     repoLabel: "Source code",
     demoUnavailable: "Demo coming soon",
@@ -67,10 +67,10 @@ const en: Content = {
         summary:
           "A neighbourhood supermarket was taking orders over WhatsApp and tracking stock by hand. I built an online store with cash-on-delivery checkout and an admin panel that brings catalogue, stock and orders together in one place.",
         outcome:
-          // Describes the scope built, not the deployment status: the demo is
-          // currently down (see the TODO in shared.ts). Add real numbers once
-          // it's back up — products loaded, orders handled, months in use.
-          "A complete application on two fronts: a public storefront with cart and cash-on-delivery checkout, and an admin panel with authentication, point of sale with camera-based barcode scanning, low-stock alerts and sales reports.",
+          // TODO(David): swap for hard numbers once the shop has been using it —
+          // products loaded, orders handled, months in use. One concrete figure
+          // outweighs a feature list.
+          "Deployed and running: public storefront with cart and cash-on-delivery checkout, admin panel with authentication, point of sale with camera-based barcode scanning, low-stock alerts and sales reports.",
         role:
           "I built all of it: the Postgres data model with Row Level Security, authentication, image uploads, the storefront and the admin panel. I work with AI assistants to move quickly, and I review and understand every part before calling it done.",
         imageAlt:
@@ -101,7 +101,7 @@ const en: Content = {
       "I wanted to learn something different, and web development gave me what I like about flying without the ceiling: I can build a whole thing from scratch, break it, understand why it broke, and put it back up the same day. Both halves hooked me — the part you see and the part holding it up underneath.",
       "I'm still flying while I make this move, and from aviation I bring the habit of verifying before calling something good, a tolerance for the boring procedures that prevent big problems, and the reflex of taking real responsibility for what I hand over.",
     ],
-    photoAlt: `Portrait of ${site.name}`,
+    photoAlt: `${site.name} in an aircraft cockpit, wearing an aviation headset`,
     lookingFor:
       "I'm looking for my first junior web developer role, on a team that reviews code and does mentoring. I'm based in Cali and open to both remote and hybrid.",
   },
@@ -127,13 +127,14 @@ const en: Content = {
           "Credential 68a24eb2-3601-4c5f-90c5-b645f4dcdb86, verifiable on the public Platzi profile.",
         ],
       },
-      // Ready for when you uncomment the entry in shared.ts with real dates.
+      // ⚠️ TODO(David): add the airline in `organization` and your total flight
+      // hours as the first highlight — see the note in es.ts.
       "piloto-comercial": {
         title: "Commercial Airline Pilot",
-        organization: "TODO: airline or flight school",
+        organization: "Commercial aviation · Colombia",
         highlights: [
-          "TODO: a concrete figure. Total flight hours are the aviation equivalent of a metric, and they tell a recruiter you sustain something demanding.",
-          "TODO: a responsibility that translates. E.g. operating under strict procedures, coordinating with crew and ATC, or direct responsibility for passenger safety.",
+          "Operating under strict procedures and checklists, with direct responsibility for safety on board.",
+          "Decision-making with incomplete information and under time pressure, coordinating with crew and air traffic control.",
         ],
       },
       "formacion-aeronautica": {

@@ -27,12 +27,22 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 /**
- * Format an ISO `YYYY-MM` string as a localised "Mar 2019" style label.
- * Timeline dates are month-precision only, so we build the Date in UTC to
- * avoid the classic off-by-one-month timezone bug.
+ * Format a timeline date as a localised label.
+ *
+ * Accepts `YYYY-MM` ("mar 2019") or bare `YYYY` ("2019"). The year-only form
+ * exists so an entry whose month nobody remembers can stay honest instead of
+ * being padded to January — a made-up month renders as fact on the page.
+ *
+ * The Date is built in UTC to avoid the classic off-by-one-month bug where a
+ * negative timezone offset rolls the 1st back into the previous month.
  */
 export function formatMonth(iso: string, locale: string) {
   const [year, month] = iso.split("-").map(Number);
+
+  if (month === undefined || Number.isNaN(month)) {
+    return String(year);
+  }
+
   return new Intl.DateTimeFormat(locale, {
     month: "short",
     year: "numeric",

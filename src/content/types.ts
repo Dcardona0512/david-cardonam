@@ -50,9 +50,13 @@ export type TimelineKind = "work" | "education" | "certification";
 export interface TimelineMeta {
   id: string;
   kind: TimelineKind;
-  /** ISO `YYYY-MM`. Drives sorting, so it must be accurate. */
+  /**
+   * `YYYY-MM`, or bare `YYYY` when the month isn't known. Drives sorting and is
+   * rendered verbatim, so it must be accurate — use the year-only form rather
+   * than guessing a month.
+   */
   start: string;
-  /** ISO `YYYY-MM`, or `null` for "current". */
+  /** Same format as `start`, or `null` for "current". */
   end: string | null;
   /** Certificate verification URL, or company/school site. */
   url?: string;

@@ -35,10 +35,13 @@ export const site = {
    */
   resume: null as Record<Locale, string> | null,
   /**
-   * Profile photo at /public/profile/avatar.jpg (square, ≥600px).
-   * Leave `null` and the About section renders a typographic monogram instead.
+   * David en cabina, con cascos. Es la foto correcta para esta sección: cuenta
+   * la transición piloto → desarrollo sin que haya que leer un solo párrafo.
+   * Cuadrada, 800px, servida por next/image.
+   *
+   * Ponlo a `null` y «Sobre mí» vuelve al monograma tipográfico.
    */
-  photo: null as string | null,
+  photo: "/profile/avatar.jpg" as string | null,
 } as const;
 
 export const socials: SocialLink[] = [
@@ -132,14 +135,10 @@ export const projects: ProjectMeta[] = [
    * Tailwind v4, and @zxing for barcode scanning. Both the storefront and the
    * admin panel are live and returned 200 when checked.
    *
-   * ⚠️ TODO(David): la demo está caída. https://autoservicios-la-53.vercel.app
-   * devuelve DEPLOYMENT_NOT_FOUND y tu equipo de Vercel no tiene proyectos, así
-   * que ese despliegue ya no existe. Lo dejo en `null` a propósito: la tarjeta
-   * muestra «Demo en preparación», que es mejor que mandar a un reclutador a un
-   * 404 de Vercel.
-   *
-   * Vuelve a desplegar la-53 y pega aquí la URL — es lo que más peso tiene de
-   * todo el portafolio, porque es lo único que un reclutador puede usar.
+   * El host correcto es `autoserviciosla53` — sin guiones. El README del repo
+   * la-53 anuncia `autoservicios-la-53`, que devuelve DEPLOYMENT_NOT_FOUND;
+   * arregla ese README, porque un reclutador que lo lea también se estrellará.
+   * Verificado: la tienda y /admin/login responden 200 y sirven productos.
    *
    * La captura es el panel de administración. Antes de guardarla se difuminaron
    * dos zonas: el correo de la barra superior y el nombre de una clienta real en
@@ -150,7 +149,7 @@ export const projects: ProjectMeta[] = [
   {
     id: "la-53",
     stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS"],
-    demoUrl: null, // volver a poner la URL cuando la demo esté de nuevo arriba
+    demoUrl: "https://autoserviciosla53.vercel.app", // verificado, 200
     repoUrl: "https://github.com/Dcardona0512/la-53", // verificado, 200
     image: "/projects/la-53.png",
     featured: true,
@@ -180,18 +179,18 @@ export const timeline: TimelineMeta[] = [
     url: "https://platzi.com/@pilotdavid0512827/",
   },
   /**
-   * ⚠️ TODO(David): descomenta esto y pon TU fecha real de inicio como piloto.
-   * Lo dejo comentado a propósito: las fechas se renderizan visibles y ordenan
-   * la lista, así que una fecha inventada por mí sería un dato falso en tu
-   * portafolio. El texto ya está escrito en es.ts / en.ts con este mismo id.
+   * Volando desde 2018 y sigue en activo, de ahí `end: null` → «Actualidad».
+   * Año sin mes a propósito: David dio el año, y rellenar un mes inventado
+   * pondría un dato falso en la página. `formatMonth` admite ambos formatos.
    *
-   * `end: null` significa «actualidad», que es tu caso: sigues volando. Así la
-   * entrada aparece la primera y se lee «piloto comercial en activo que además
-   * construye software», que es más fuerte que un ex piloto.
+   * Al ordenar por `end`, esta entrada queda la primera: lo primero que lee un
+   * reclutador es «piloto comercial, 2018 — Actualidad», que es exactamente el
+   * gancho del portafolio.
    */
-  // { id: "piloto-comercial", kind: "work", start: "AAAA-MM", end: null },
-  //
-  // Y si tienes la licencia o la formación aeronáutica, añádela también:
+  { id: "piloto-comercial", kind: "work", start: "2018", end: null },
+
+  // ⚠️ TODO(David): si tienes licencia o formación aeronáutica reglada, añádela.
+  // El texto ya está escrito en es.ts / en.ts con este id.
   // { id: "formacion-aeronautica", kind: "education", start: "AAAA-MM", end: "AAAA-MM" },
 ];
 
