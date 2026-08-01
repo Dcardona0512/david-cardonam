@@ -62,19 +62,19 @@ const en: Content = {
     outcomeLabel: "Outcome",
     roleLabel: "My role",
     items: {
-      "la-53": {
-        name: "Autoservicios La 53",
+      "tu-supermarket": {
+        name: "TU SUPERMARKET",
         summary:
-          "A neighbourhood supermarket was taking orders over WhatsApp and tracking stock by hand. I built an online store with cash-on-delivery checkout and an admin panel that brings catalogue, stock and orders together in one place.",
+          "Neighbourhood shops take orders over WhatsApp and track stock by hand, so they never know what's running out or what's about to expire. I built an online store with cash-on-delivery checkout and an admin panel that brings catalogue, stock, register and orders together in one place.",
         outcome:
-          // TODO(David): swap for hard numbers once the shop has been using it —
+          // TODO(David): swap for hard numbers once a shop has been using it —
           // products loaded, orders handled, months in use. One concrete figure
           // outweighs a feature list.
-          "Deployed and running: public storefront with cart and cash-on-delivery checkout, admin panel with authentication, point of sale with camera-based barcode scanning, low-stock alerts and sales reports.",
+          "Deployed and running: catalogue with category and subcategory search, cart and cash-on-delivery checkout, point of sale with barcode scanning, stock intake, register close-out, sales reports, and alerts for low stock and expiring products.",
         role:
           "I built all of it: the Postgres data model with Row Level Security, authentication, image uploads, the storefront and the admin panel. I work with AI assistants to move quickly, and I review and understand every part before calling it done.",
         imageAlt:
-          "Admin dashboard showing the business summary: product count, pending orders, monthly sales and profit, a list of recent orders and low-stock alerts.",
+          "TU SUPERMARKET online store: product catalogue with images, prices in Colombian pesos and category filters.",
       },
     },
   },

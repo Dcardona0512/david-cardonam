@@ -5,7 +5,7 @@ import type { Content } from "./types";
  * Spanish content — this is the canonical version; `en.ts` is its translation.
  *
  * The prose here is real, not placeholder: David's pilot-to-developer story and
- * the la-53 project. Anything still marked `TODO` is waiting on a fact only he
+ * the TU SUPERMARKET project. Anything still marked `TODO` waits on a fact only he
  * has (dates, flight hours), never on wording.
  *
  * Keep the constraints when editing: pitch in one sentence, one outcome per
@@ -72,19 +72,19 @@ const es: Content = {
     outcomeLabel: "Resultado",
     roleLabel: "Mi rol",
     items: {
-      "la-53": {
-        name: "Autoservicios La 53",
+      "tu-supermarket": {
+        name: "TU SUPERMARKET",
         summary:
-          "Un supermercado de barrio tomaba los pedidos por WhatsApp y llevaba el inventario a mano. Construí una tienda en línea con pago contra entrega y un panel de administración que unifica catálogo, stock y pedidos en un solo sitio.",
+          "Las tiendas de barrio toman los pedidos por WhatsApp y llevan el inventario a mano, así que nunca saben qué se está agotando ni qué está por vencer. Construí una tienda en línea con pago contra entrega y un panel que unifica catálogo, stock, caja y pedidos en un solo sitio.",
         outcome:
-          // TODO(David): cuando el negocio lleve un tiempo usándolo, cambia esto
+          // TODO(David): cuando una tienda lleve un tiempo usándolo, cambia esto
           // por el dato duro: productos cargados, pedidos gestionados, meses en
           // uso. Un número concreto pesa más que una lista de funcionalidades.
-          "Desplegado y en funcionamiento: tienda pública con carrito y checkout contra entrega, panel de administración con autenticación, punto de venta con lector de códigos de barras por cámara, alertas de stock bajo e informes de ventas.",
+          "Desplegado y en funcionamiento: catálogo con búsqueda por categoría y subcategoría, carrito y checkout contra entrega, punto de venta con lector de códigos de barras, entradas de inventario, cierre de caja, informes de ventas y alertas de stock bajo y de productos por vencer.",
         role:
           "Lo construí completo: modelo de datos en Postgres con Row Level Security, autenticación, subida de imágenes, la tienda y el panel. Trabajo con asistentes de IA para avanzar rápido, y reviso y entiendo cada parte antes de darla por terminada.",
         imageAlt:
-          "Panel de administración con el resumen del negocio: número de productos, pedidos pendientes, ventas y ganancia del mes, lista de pedidos recientes y alertas de stock bajo.",
+          "Tienda en línea de TU SUPERMARKET: catálogo de productos con imágenes, precios en pesos colombianos y filtros por categoría.",
       },
     },
   },

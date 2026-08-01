@@ -64,7 +64,7 @@ export const socials: SocialLink[] = [
  * `learning` = you're actively studying it.
  *
  * This list is derived from what you've actually shipped, not from a template:
- * everything marked `solid` appears in the la-53 codebase or in the Platzi
+ * everything marked `solid` appears in the tu-supermarket codebase or in the Platzi
  * certification. That's the whole point of the split — a recruiter who asks one
  * question about a `solid` skill you can't defend stops reading, so the honesty
  * of this column is what makes it worth having.
@@ -128,30 +128,34 @@ export const skillGroups: SkillGroup[] = [
  */
 export const projects: ProjectMeta[] = [
   /**
-   * Autoservicios La 53 — github.com/Dcardona0512/la-53
+   * TU SUPERMARKET — github.com/Dcardona0512/tu-supermarket
    *
-   * Stack and feature list read from the repo, not guessed: Next.js 15 App
-   * Router with route groups, Supabase (Postgres + RLS + Auth + Storage),
-   * Tailwind v4, and @zxing for barcode scanning. Both the storefront and the
-   * admin panel are live and returned 200 when checked.
+   * Sustituye a la-53, que pasa a repo privado por ser de marca personal.
+   * Es el sucesor de aquel y va bastante más lejos: subcategorías, códigos de
+   * barras, control de vencimientos, entradas de inventario y cierre de caja.
    *
-   * El host correcto es `autoserviciosla53` — sin guiones. El README del repo
-   * la-53 anuncia `autoservicios-la-53`, que devuelve DEPLOYMENT_NOT_FOUND;
-   * arregla ese README, porque un reclutador que lo lea también se estrellará.
-   * Verificado: la tienda y /admin/login responden 200 y sirven productos.
+   * Stack y funcionalidades leídos del repo público (README + package.json),
+   * no supuestos: Next.js 15 App Router con route groups, TypeScript, Supabase
+   * (Postgres con RLS, Auth y Storage), Tailwind v4 y @zxing para el lector de
+   * códigos de barras.
    *
-   * La captura es el panel de administración. Antes de guardarla se difuminaron
-   * dos zonas: el correo de la barra superior y el nombre de una clienta real en
-   * «Pedidos recientes» — ese dato es de una tercera persona, no de David.
-   * Es 1.99:1 y la tarjeta la recorta a 16:9, pero solo un 5% por lado, así que
-   * ni el logo ni el botón «Salir» se pierden.
+   * ⚠️ La URL de la demo NO es la del README (`mimarket-one`, que da 404, igual
+   * que le pasaba al README de la-53 — conviene corregirlo). La real es
+   * `tusupermarket.vercel.app`, verificada por contenido y no solo por código
+   * 200: sirve el catálogo con 24 imágenes de producto y 7 categorías.
    */
   {
-    id: "la-53",
+    id: "tu-supermarket",
     stack: ["Next.js 15", "TypeScript", "Supabase", "Tailwind CSS"],
-    demoUrl: "https://autoserviciosla53.vercel.app", // verificado, 200
-    repoUrl: "https://github.com/Dcardona0512/la-53", // verificado, 200
-    image: "/projects/la-53.png",
+    demoUrl: "https://tusupermarket.vercel.app", // verificado por contenido
+    repoUrl: "https://github.com/Dcardona0512/tu-supermarket", // público, 200
+    /**
+     * ⚠️ TODO(David): falta la captura. No reutilizo la de la-53 porque lleva
+     * «Panel · La 53» escrito en la cabecera: sería enseñar otra aplicación.
+     * Guarda una captura de tusupermarket.vercel.app (la tienda, con productos
+     * cargados) en /public/projects/tu-supermarket.png, 16:9 y ≥1280px.
+     */
+    image: null,
     featured: true,
   },
 ];
