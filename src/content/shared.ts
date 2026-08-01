@@ -150,12 +150,12 @@ export const projects: ProjectMeta[] = [
     demoUrl: "https://tusupermarket.vercel.app", // verificado por contenido
     repoUrl: "https://github.com/Dcardona0512/tu-supermarket", // público, 200
     /**
-     * ⚠️ TODO(David): falta la captura. No reutilizo la de la-53 porque lleva
-     * «Panel · La 53» escrito en la cabecera: sería enseñar otra aplicación.
-     * Guarda una captura de tusupermarket.vercel.app (la tienda, con productos
-     * cargados) en /public/projects/tu-supermarket.png, 16:9 y ≥1280px.
+     * Captura de la tienda pública, recortada a 16:9 exacto (1589x894) cortando
+     * solo por abajo, para que la tarjeta no tenga que recortar nada con
+     * object-cover y la cabecera quede intacta. Sin datos personales: solo
+     * catálogo, precios y categorías.
      */
-    image: null,
+    image: "/projects/tu-supermarket.png",
     featured: true,
   },
 ];
